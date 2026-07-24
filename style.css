@@ -434,3 +434,64 @@ nav {
     color:#999;
 
 }
+/* CONTACT FORM */
+
+.contact-form {
+
+    max-width:600px;
+    margin:40px auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+
+.contact-form input,
+.contact-form textarea {
+
+    background:#111;
+    border:1px solid #333;
+    padding:18px;
+    border-radius:15px;
+    color:white;
+    font-size:16px;
+
+}
+
+
+.contact-form textarea {
+
+    height:160px;
+    resize:none;
+
+}
+
+
+.contact-form button {
+
+    padding:18px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+
+.contact-form button:hover {
+
+    transform:scale(1.05);
+
+}
+
+
+.email {
+
+    text-align:center;
+    color:#888;
+
+}
