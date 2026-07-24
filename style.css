@@ -390,3 +390,47 @@ nav {
     z-index:1;
 
 }
+
+.project {
+
+    background:
+    linear-gradient(
+    145deg,
+    #151515,
+    #080808
+    );
+
+    padding:45px;
+    border-radius:25px;
+    border:1px solid #222;
+    transition:.4s;
+    text-align:center;
+
+}
+
+
+.project:hover {
+
+    transform:translateY(-12px);
+
+    border-color:#777;
+
+    box-shadow:
+    0 20px 60px #000;
+
+}
+
+
+.project h3 {
+
+    font-size:28px;
+    margin-bottom:15px;
+
+}
+
+
+.project p {
+
+    color:#999;
+
+}
