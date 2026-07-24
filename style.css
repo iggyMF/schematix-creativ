@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: white;
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(5,5,5,.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+
+.logo {
+    width: 150px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+    transition: .3s;
+}
+
+
+nav a:hover {
+    color: #888;
+}
+
+
+
+/* HERO */
+
+.hero {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 0 20px;
+
+    background:
+    radial-gradient(circle at top,
+    #222,
+    #050505 60%);
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(45px,8vw,90px);
+    letter-spacing: 4px;
+    font-weight: 900;
+
+}
+
+
+.hero p {
+
+    max-width: 650px;
+    margin: 30px auto;
+    color: #aaa;
+    font-size: 20px;
+
+}
+
+
+.btn {
+
+    display:inline-block;
+    padding:15px 40px;
+    background:white;
+    color:black;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+
+}
+
+
+.btn:hover {
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* SECTIONS */
+
+
+section {
+
+    padding:100px 8%;
+
+}
+
+
+h2 {
+
+    text-align:center;
+    font-size:45px;
+    margin-bottom:50px;
+
+}
+
+
+
+/* SERVICES */
+
+
+.cards {
+
+    display:flex;
+    gap:25px;
+    justify-content:center;
+
+}
+
+
+.card {
+
+    background:#111;
+    border:1px solid #222;
+    padding:35px;
+    border-radius:20px;
+    flex:1;
+    transition:.3s;
+
+}
+
+
+.card:hover {
+
+    transform:translateY(-10px);
+    border-color:#555;
+
+}
+
+
+
+.card h3 {
+
+    font-size:25px;
+    margin-bottom:15px;
+
+}
+
+
+.card p {
+
+    color:#999;
+
+}
+
+
+
+/* PORTFOLIO */
+
+
+.portfolio {
+
+    display:flex;
+    gap:25px;
+
+}
+
+
+.portfolio div {
+
+    flex:1;
+    background:#111;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid #222;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer {
+
+    text-align:center;
+    padding:40px;
+    color:#777;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:800px){
+
+header {
+
+    flex-direction:column;
+
+}
+
+nav {
+
+    margin-top:20px;
+
+}
+
+
+.cards,
+.portfolio {
+
+    flex-direction:column;
+
+}
+
+}
