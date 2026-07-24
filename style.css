@@ -534,3 +534,36 @@ nav {
     }
 
 }
+/* QUOTE SECTION */
+
+#quote {
+
+    text-align:center;
+    background:
+    linear-gradient(
+    145deg,
+    #111,
+    #050505
+    );
+
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+
+}
+
+
+#quote p {
+
+    max-width:700px;
+    margin:25px auto;
+    color:#aaa;
+    font-size:18px;
+
+}
+
+
+#quote .btn {
+
+    margin-top:20px;
+
+}
