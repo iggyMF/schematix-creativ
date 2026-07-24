@@ -567,3 +567,28 @@ nav {
     margin-top:20px;
 
 }
+
+.secondary{
+
+background:transparent;
+border:2px solid white;
+color:white;
+
+}
+
+.secondary:hover{
+
+background:white;
+color:black;
+
+}
+
+.hero-buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:40px;
+
+}
