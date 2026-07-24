@@ -495,3 +495,42 @@ nav {
     color:#888;
 
 }
+
+@media(max-width:600px){
+
+    header {
+
+        padding:20px;
+
+    }
+
+
+    .logo {
+
+        width:120px;
+
+    }
+
+
+    nav a {
+
+        font-size:13px;
+        margin-left:10px;
+
+    }
+
+
+    .hero h1 {
+
+        letter-spacing:2px;
+
+    }
+
+
+    h2 {
+
+        font-size:35px;
+
+    }
+
+}
