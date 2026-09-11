@@ -1,3 +1,4 @@
+```css
 /* ================================
    SCHEMATIX CREATIV
    PREMIUM WEBSITE DESIGN
@@ -132,7 +133,8 @@ nav a:hover::after {
     display: flex;
     align-items: center;
 
-    padding: 90px 10%;
+    /* MOVED HERO CONTENT UP */
+    padding: 50px 10%;
 
     position: relative;
 
@@ -756,7 +758,7 @@ footer {
     .hero {
         min-height: 650px;
 
-        padding: 80px 7%;
+        padding: 50px 7%;
     }
 
 
@@ -786,3 +788,4 @@ footer {
     }
 
 }
+```
