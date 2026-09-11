@@ -1,6 +1,7 @@
+```css
 /* ================================
    SCHEMATIX CREATIV
-   PREMIUM WEBSITE DESIGN
+   PREMIUM CREATIVE STUDIO
 ================================ */
 
 * {
@@ -32,14 +33,17 @@ body::before {
     inset: 0;
 
     background-image:
-        linear-gradient(rgba(5,6,11,.92), rgba(5,6,11,.92)),
+        linear-gradient(
+            rgba(5, 6, 11, .93),
+            rgba(5, 6, 11, .93)
+        ),
         url("logo.png");
 
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 70%;
+    background-size: 65%;
 
-    opacity: .08;
+    opacity: .10;
 
     pointer-events: none;
 
@@ -52,7 +56,7 @@ body::before {
 ================================ */
 
 header {
-    height: 70px;
+    height: 68px;
 
     display: flex;
     align-items: center;
@@ -60,12 +64,12 @@ header {
 
     padding: 0 8%;
 
-    background: rgba(5,6,11,.82);
+    background: rgba(5, 6, 11, .78);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    border-bottom: 1px solid rgba(150,80,255,.35);
+    border-bottom: 1px solid rgba(150, 80, 255, .28);
 
     position: sticky;
     top: 0;
@@ -73,17 +77,29 @@ header {
     z-index: 1000;
 }
 
+
 .logo {
-    width: 185px;
-    max-height: 48px;
+    width: 180px;
+
+    max-height: 46px;
+
     object-fit: contain;
+
+    transition: .3s ease;
+}
+
+
+.logo:hover {
+    transform: scale(1.03);
 }
 
 
 nav {
     display: flex;
-    gap: 45px;
+
+    gap: 40px;
 }
+
 
 nav a {
     color: #e7e4ee;
@@ -92,14 +108,18 @@ nav a {
 
     font-size: 14px;
 
+    letter-spacing: .5px;
+
     transition: .3s ease;
 
     position: relative;
 }
 
+
 nav a:hover {
-    color: #9b5cff;
+    color: #a565ff;
 }
+
 
 nav a::after {
     content: "";
@@ -107,15 +127,21 @@ nav a::after {
     position: absolute;
 
     left: 0;
+
     bottom: -8px;
 
     width: 0;
+
     height: 2px;
 
-    background: #9b5cff;
+    background: #a565ff;
+
+    box-shadow:
+        0 0 10px rgba(165, 101, 255, .7);
 
     transition: width .3s ease;
 }
+
 
 nav a:hover::after {
     width: 100%;
@@ -130,120 +156,210 @@ nav a:hover::after {
     min-height: 620px;
 
     display: flex;
+
     align-items: center;
 
-    padding: 90px 10%;
+    padding: 50px 10%;
 
     position: relative;
 
     overflow: hidden;
 
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
 }
 
 
-/* HUGE LOGO SILHOUETTE */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 850px;
-    height: 850px;
-
-    right: -120px;
-    top: -120px;
-
-    background-image: url("logo.png");
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
-    opacity: .12;
-
-    filter:
-        drop-shadow(0 0 35px rgba(130,60,255,.8));
-
-    pointer-events: none;
-
-    animation: logoFloat 8s ease-in-out infinite;
-}
-
-
-/* PURPLE GLOW */
+/* HERO LIGHT */
 
 .hero::after {
     content: "";
 
     position: absolute;
 
-    width: 600px;
-    height: 600px;
+    width: 650px;
+
+    height: 650px;
 
     border-radius: 50%;
 
-    background: rgba(120,40,255,.16);
+    background: rgba(120, 40, 255, .15);
 
-    filter: blur(130px);
+    filter: blur(140px);
 
-    right: -250px;
-    top: 0;
+    right: -280px;
+
+    top: -50px;
 
     pointer-events: none;
+}
+
+
+/* ================================
+   LARGE LOGO SILHOUETTE
+================================ */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 800px;
+
+    height: 800px;
+
+    right: -100px;
+
+    top: -100px;
+
+    background-image: url("logo.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: contain;
+
+    opacity: .11;
+
+    filter:
+        drop-shadow(
+            0 0 45px rgba(130, 60, 255, .75)
+        );
+
+    pointer-events: none;
+
+    animation:
+        logoFloat 9s ease-in-out infinite;
 }
 
 
 @keyframes logoFloat {
 
     0% {
-        transform: translateY(0) rotate(-3deg);
+        transform:
+            translateY(0)
+            rotate(-3deg);
     }
 
     50% {
-        transform: translateY(25px) rotate(2deg);
+        transform:
+            translateY(22px)
+            rotate(2deg);
     }
 
     100% {
-        transform: translateY(0) rotate(-3deg);
+        transform:
+            translateY(0)
+            rotate(-3deg);
     }
 
 }
 
 
+/* ================================
+   HERO CONTENT
+================================ */
+
 .hero-content {
-    max-width: 650px;
+    max-width: 680px;
 
     position: relative;
 
     z-index: 5;
+
+    animation:
+        heroReveal .8s ease-out;
 }
 
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ================================
+   HERO LABEL
+================================ */
 
 .hero h4 {
-    color: #a96cff;
+    display: inline-block;
 
-    font-size: 14px;
+    color: #b17aff;
 
-    letter-spacing: 3px;
+    font-size: 13px;
 
-    margin-bottom: 15px;
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
 
     text-transform: uppercase;
+
+    position: relative;
+
+    padding-left: 38px;
 }
 
 
+.hero h4::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 28px;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7135e8,
+            #b17aff
+        );
+
+    box-shadow:
+        0 0 12px rgba(165, 101, 255, .7);
+
+    transform:
+        translateY(-50%);
+}
+
+
+/* ================================
+   MAIN HEADLINE
+================================ */
+
 .hero h1 {
-    font-size: clamp(55px, 7vw, 100px);
+    font-size:
+        clamp(55px, 7vw, 100px);
 
-    line-height: .92;
+    line-height: .90;
 
-    letter-spacing: -3px;
+    letter-spacing: -4px;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 
     font-weight: 800;
+
+    text-shadow:
+        0 0 35px rgba(255, 255, 255, .04);
 }
 
 
@@ -252,16 +368,26 @@ nav a:hover::after {
 }
 
 
+/* ================================
+   HERO DESCRIPTION
+================================ */
+
 .hero p {
     max-width: 550px;
 
-    color: #b9b7c1;
+    color: #aaa7b3;
 
     font-size: 17px;
 
-    margin-bottom: 30px;
+    line-height: 1.7;
+
+    margin-bottom: 32px;
 }
 
+
+/* ================================
+   HERO BUTTONS
+================================ */
 
 .hero-buttons {
     display: flex;
@@ -272,20 +398,17 @@ nav a:hover::after {
 }
 
 
-/* ================================
-   BUTTONS
-================================ */
-
 .btn {
     display: inline-block;
 
-    padding: 13px 24px;
+    padding: 14px 26px;
 
-    background: linear-gradient(
-        135deg,
-        #7a3cff,
-        #a768ff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #7135e8,
+            #a768ff
+        );
 
     color: white;
 
@@ -297,34 +420,43 @@ nav a:hover::after {
 
     font-weight: bold;
 
+    letter-spacing: .3px;
+
     transition: .3s ease;
 
-    border: 1px solid rgba(180,120,255,.6);
+    border: 1px solid rgba(180, 120, 255, .6);
 
     box-shadow:
-        0 0 20px rgba(120,60,255,.25);
+        0 0 22px rgba(120, 60, 255, .25);
 }
 
+
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 
     box-shadow:
-        0 10px 30px rgba(120,60,255,.45);
+        0 12px 35px rgba(120, 60, 255, .45);
 }
 
 
 .secondary {
-    background: transparent;
+    background: rgba(10, 10, 18, .55);
 
-    border: 1px solid #8f52f5;
+    border:
+        1px solid rgba(165, 101, 255, .75);
 
     color: white;
 
     box-shadow: none;
 }
 
+
 .secondary:hover {
-    background: rgba(140,80,255,.15);
+    background:
+        rgba(140, 80, 255, .12);
+
+    box-shadow:
+        0 0 25px rgba(120, 60, 255, .18);
 }
 
 
@@ -337,14 +469,16 @@ section {
 
     position: relative;
 
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    border-bottom:
+        1px solid rgba(255, 255, 255, .06);
 }
 
 
 section h2 {
     text-align: center;
 
-    font-size: clamp(34px,4vw,55px);
+    font-size:
+        clamp(34px, 4vw, 55px);
 
     margin-bottom: 20px;
 
@@ -359,7 +493,8 @@ section h2 {
 .section-intro {
     max-width: 700px;
 
-    margin: 0 auto 50px;
+    margin:
+        0 auto 50px;
 
     text-align: center;
 
@@ -390,16 +525,19 @@ section h2 {
 .card {
     position: relative;
 
-    padding: 32px;
+    padding: 24px;
+
+    min-height: 180px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(20,20,30,.95),
-            rgba(8,8,14,.95)
+            rgba(20, 20, 30, .95),
+            rgba(8, 8, 14, .95)
         );
 
-    border: 1px solid rgba(145,80,255,.55);
+    border:
+        1px solid rgba(145, 80, 255, .55);
 
     border-radius: 8px;
 
@@ -415,26 +553,31 @@ section h2 {
     position: absolute;
 
     width: 180px;
+
     height: 180px;
 
     border-radius: 50%;
 
-    background: rgba(130,60,255,.15);
+    background:
+        rgba(130, 60, 255, .15);
 
     filter: blur(60px);
 
     top: -100px;
+
     right: -100px;
 }
 
 
 .card:hover {
-    transform: translateY(-8px);
+    transform:
+        translateY(-8px);
 
     border-color: #b77cff;
 
     box-shadow:
-        0 20px 60px rgba(80,30,180,.25);
+        0 20px 60px
+        rgba(80, 30, 180, .25);
 }
 
 
@@ -443,11 +586,11 @@ section h2 {
 
     color: #a565ff;
 
-    font-size: 14px;
+    font-size: 13px;
 
     letter-spacing: 3px;
 
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 
@@ -466,6 +609,8 @@ section h2 {
     position: relative;
 
     font-size: 15px;
+
+    line-height: 1.6;
 }
 
 
@@ -494,7 +639,7 @@ section h2 {
 
 
 /* ================================
-   QUOTE SECTION
+   QUOTE
 ================================ */
 
 #quote {
@@ -503,7 +648,7 @@ section h2 {
     background:
         radial-gradient(
             circle at center,
-            rgba(100,40,200,.13),
+            rgba(100, 40, 200, .13),
             transparent 55%
         );
 }
@@ -512,9 +657,24 @@ section h2 {
 #quote p {
     max-width: 700px;
 
-    margin: 0 auto 30px;
+    margin:
+        0 auto 30px;
 
     color: #aaa7b3;
+}
+
+
+/* ================================
+   WHY
+================================ */
+
+#why {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 6, 11, .3),
+            rgba(10, 8, 18, .5)
+        );
 }
 
 
@@ -528,7 +688,7 @@ section h2 {
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 24px;
 
     max-width: 1200px;
 
@@ -539,52 +699,168 @@ section h2 {
 .project {
     background: #0b0c12;
 
-    border: 1px solid rgba(145,80,255,.35);
+    border:
+        1px solid rgba(145, 80, 255, .35);
 
     border-radius: 10px;
 
     overflow: hidden;
 
     transition: .35s ease;
+
+    position: relative;
 }
 
 
 .project:hover {
-    transform: translateY(-8px);
+    transform:
+        translateY(-8px);
 
     border-color: #a565ff;
 
     box-shadow:
-        0 20px 50px rgba(80,30,180,.25);
+        0 20px 50px
+        rgba(80, 30, 180, .25);
 }
 
 
-.project img {
-    width: 100%;
+/* PORTFOLIO VISUAL */
 
-    height: 180px;
+.project-visual {
+    height: 230px;
 
-    object-fit: cover;
+    display: flex;
 
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom:
+        1px solid rgba(145, 80, 255, .3);
+}
+
+
+.project-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(145, 80, 255, .18);
+
+    filter: blur(70px);
+}
+
+
+.project-visual span {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    letter-spacing: 8px;
+
+    color: white;
+}
+
+
+.project-visual small {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 8px;
+
+    color: #b78cff;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+
+.nova {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(140, 70, 255, .28),
+            #08080f 70%
+        );
+}
+
+
+.volt {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(180, 90, 255, .25),
+            #08080f 70%
+        );
+}
+
+
+.luxe {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(110, 70, 200, .25),
+            #08080f 70%
+        );
+}
+
+
+/* PROJECT INFORMATION */
+
+.project-info {
+    padding: 22px;
+}
+
+
+.project-number {
     display: block;
 
-    border-bottom: 1px solid rgba(145,80,255,.3);
+    color: #a565ff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
 }
 
 
-.project h3 {
-    padding: 20px 20px 5px;
+.project-info h3 {
+    padding: 0;
 
-    font-size: 21px;
+    font-size: 22px;
+
+    margin-bottom: 10px;
 }
 
 
-.project p {
-    padding: 0 20px 25px;
+.project-info p {
+    padding: 0;
 
     color: #aaa7b3;
 
     font-size: 14px;
+
+    line-height: 1.6;
 }
 
 
@@ -639,9 +915,11 @@ section h2 {
 
     padding: 16px;
 
-    background: rgba(15,15,22,.9);
+    background:
+        rgba(15, 15, 22, .9);
 
-    border: 1px solid rgba(145,80,255,.4);
+    border:
+        1px solid rgba(145, 80, 255, .4);
 
     border-radius: 7px;
 
@@ -658,7 +936,8 @@ section h2 {
     border-color: #a565ff;
 
     box-shadow:
-        0 0 20px rgba(130,60,255,.18);
+        0 0 20px
+        rgba(130, 60, 255, .18);
 }
 
 
@@ -674,7 +953,8 @@ section h2 {
 
     border-radius: 7px;
 
-    border: 1px solid #9b5cff;
+    border:
+        1px solid #9b5cff;
 
     background:
         linear-gradient(
@@ -696,10 +976,12 @@ section h2 {
 
 
 .contact-form button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 10px 30px rgba(120,60,255,.4);
+        0 10px 30px
+        rgba(120, 60, 255, .4);
 }
 
 
@@ -756,17 +1038,23 @@ footer {
     .hero {
         min-height: 650px;
 
-        padding: 80px 7%;
+        padding: 50px 7%;
     }
 
 
     .hero::before {
         width: 550px;
+
         height: 550px;
 
         right: -250px;
 
         opacity: .08;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -2px;
     }
 
 
@@ -781,8 +1069,19 @@ footer {
     }
 
 
+    .project-visual {
+        height: 210px;
+    }
+
+
+    .project-visual span {
+        font-size: 40px;
+    }
+
+
     .project img {
         height: 200px;
     }
 
 }
+```
