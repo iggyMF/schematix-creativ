@@ -672,3 +672,10 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
+/* PORTFOLIO IMAGE SIZE FIX */
+
+.project img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
