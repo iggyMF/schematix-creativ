@@ -1,4336 +1,919 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <title>SCHEMATIX CREATIV | Branding & Creative Design</title>
 
-  <title>SCHEMATIX CREATIV — We Build Brands People Remember.</title>
+    <meta
+        name="description"
+        content="SCHEMATIX CREATIV builds memorable brands through identity design, graphic design, and creative direction."
+    >
 
-  <meta
-    name="description"
-    content="SCHEMATIX CREATIV is a creative branding studio specializing in brand identity, graphic design, visual systems, and creative direction."
-  >
+    <meta name="theme-color" content="#07070c">
 
-  <meta
-    name="keywords"
-    content="SCHEMATIX CREATIV, branding, graphic design, logo design, brand identity, creative direction, visual identity"
-  >
-
-  <meta name="author" content="SCHEMATIX CREATIV">
-
-  <meta name="theme-color" content="#07070a">
-
-  <link rel="icon" type="image/png" href="logo.png">
-
-  <style>
-
-    /* =========================================================
-       SCHEMATIX CREATIV
-       PREMIUM CREATIVE STUDIO
-    ========================================================= */
-
-    :root {
-      --bg: #060609;
-      --bg-soft: #0b0b10;
-      --panel: rgba(18, 18, 25, 0.72);
-      --panel-solid: #111117;
-
-      --white: #ffffff;
-      --text: #eeeef2;
-      --muted: #9999a5;
-
-      --purple: #8b45ff;
-      --purple-light: #b178ff;
-      --purple-dark: #5420b8;
-
-      --border: rgba(255,255,255,0.09);
-      --border-purple: rgba(139,69,255,0.35);
-
-      --max: 1240px;
-
-      --ease: cubic-bezier(.22,1,.36,1);
-    }
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-
-    ::selection {
-      background: var(--purple);
-      color: white;
-    }
-
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-
-    button,
-    input,
-    textarea,
-    select {
-      font: inherit;
-    }
-
-
-    button {
-      border: 0;
-      cursor: pointer;
-    }
-
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-
-    /* =========================================================
-       BACKGROUND
-    ========================================================= */
-
-    body::before {
-      content: "";
-
-      position: fixed;
-      inset: 0;
-
-      pointer-events: none;
-
-      background:
-        radial-gradient(
-          circle at 15% 10%,
-          rgba(139,69,255,.13),
-          transparent 28%
-        ),
-
-        radial-gradient(
-          circle at 85% 35%,
-          rgba(100,40,220,.10),
-          transparent 30%
-        ),
-
-        radial-gradient(
-          circle at 50% 90%,
-          rgba(139,69,255,.06),
-          transparent 35%
-        );
-
-      z-index: -3;
-    }
-
-
-    body::after {
-      content: "";
-
-      position: fixed;
-      inset: 0;
-
-      background-image:
-        linear-gradient(
-          rgba(255,255,255,.018) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.018) 1px,
-          transparent 1px
-        );
-
-      background-size: 70px 70px;
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          black,
-          transparent 80%
-        );
-
-      pointer-events: none;
-
-      z-index: -2;
-    }
-
-
-    /* =========================================================
-       CUSTOM CURSOR GLOW
-    ========================================================= */
-
-    .cursor-glow {
-      position: fixed;
-
-      width: 260px;
-      height: 260px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(139,69,255,.13),
-          transparent 65%
-        );
-
-      pointer-events: none;
-
-      transform:
-        translate(-50%, -50%);
-
-      z-index: 9999;
-
-      opacity: 0;
-
-      transition: opacity .3s ease;
-    }
-
-
-    @media (pointer: fine) {
-      .cursor-glow {
-        opacity: 1;
-      }
-    }
-
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
-
-    header {
-      position: fixed;
-
-      top: 0;
-      left: 0;
-      right: 0;
-
-      height: 78px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding:
-        0
-        max(5vw, 28px);
-
-      z-index: 1000;
-
-      background:
-        rgba(6,6,9,.72);
-
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-
-      border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
-
-      transition:
-        background .3s ease,
-        border-color .3s ease;
-    }
-
-
-    header.scrolled {
-      background:
-        rgba(6,6,9,.92);
-
-      border-color:
-        rgba(139,69,255,.18);
-    }
-
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-
-      position: relative;
-      z-index: 1002;
-    }
-
-
-    .logo {
-      width: 170px;
-      height: auto;
-
-      object-fit: contain;
-
-      transition:
-        transform .4s var(--ease),
-        filter .4s ease;
-    }
-
-
-    .logo:hover {
-      transform: scale(1.03);
-
-      filter:
-        drop-shadow(
-          0 0 18px
-          rgba(139,69,255,.35)
-        );
-    }
-
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
-
-
-    nav a {
-      position: relative;
-
-      color: #c9c9d2;
-
-      font-size: 13px;
-      font-weight: 600;
-
-      letter-spacing: .5px;
-
-      transition:
-        color .25s ease;
-    }
-
-
-    nav a::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      bottom: -9px;
-
-      width: 0;
-      height: 2px;
-
-      background:
-        linear-gradient(
-          90deg,
-          var(--purple),
-          var(--purple-light)
-        );
-
-      transition:
-        width .3s var(--ease);
-    }
-
-
-    nav a:hover {
-      color: white;
-    }
-
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-
-    .nav-cta {
-      padding:
-        11px
-        18px;
-
-      border:
-        1px solid
-        rgba(139,69,255,.45);
-
-      border-radius: 100px;
-
-      background:
-        rgba(139,69,255,.08);
-
-      color: white !important;
-    }
-
-
-    .nav-cta::after {
-      display: none;
-    }
-
-
-    .nav-cta:hover {
-      background:
-        rgba(139,69,255,.2);
-    }
-
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    .menu-toggle {
-      display: none;
-
-      width: 44px;
-      height: 44px;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 12px;
-
-      background:
-        rgba(255,255,255,.04);
-
-      position: relative;
-
-      z-index: 1002;
-    }
-
-
-    .menu-toggle span {
-      position: absolute;
-
-      left: 11px;
-
-      width: 21px;
-      height: 2px;
-
-      background: white;
-
-      transition:
-        transform .3s ease,
-        top .3s ease;
-    }
-
-
-    .menu-toggle span:nth-child(1) {
-      top: 15px;
-    }
-
-
-    .menu-toggle span:nth-child(2) {
-      top: 22px;
-    }
-
-
-    .menu-toggle.active span:nth-child(1) {
-      top: 19px;
-      transform: rotate(45deg);
-    }
-
-
-    .menu-toggle.active span:nth-child(2) {
-      top: 19px;
-      transform: rotate(-45deg);
-    }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-
-      position: relative;
-
-      padding:
-        150px
-        max(7vw, 28px)
-        100px;
-
-      overflow: hidden;
-    }
-
-
-    .hero-orb {
-      position: absolute;
-
-      width: 700px;
-      height: 700px;
-
-      right: -260px;
-      top: 80px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(139,69,255,.20),
-          rgba(139,69,255,.04) 45%,
-          transparent 70%
-        );
-
-      filter: blur(10px);
-
-      animation:
-        orbFloat 10s ease-in-out infinite;
-
-      pointer-events: none;
-    }
-
-
-    @keyframes orbFloat {
-
-      0%,
-      100% {
-        transform:
-          translate3d(0,0,0)
-          scale(1);
-      }
-
-      50% {
-        transform:
-          translate3d(-30px,25px,0)
-          scale(1.06);
-      }
-
-    }
-
-
-    .hero-grid {
-      position: absolute;
-
-      width: 760px;
-      height: 760px;
-
-      right: -120px;
-      top: 60px;
-
-      border:
-        1px solid
-        rgba(139,69,255,.10);
-
-      transform:
-        rotate(25deg);
-
-      mask-image:
-        radial-gradient(
-          circle,
-          black,
-          transparent 65%
-        );
-
-      pointer-events: none;
-    }
-
-
-    .hero-grid::before,
-    .hero-grid::after {
-      content: "";
-
-      position: absolute;
-      inset: 50%;
-
-      border:
-        1px solid
-        rgba(139,69,255,.12);
-
-      transform:
-        translate(-50%,-50%)
-        rotate(45deg);
-    }
-
-
-    .hero-content {
-      max-width: 900px;
-
-      position: relative;
-      z-index: 3;
-
-      animation:
-        heroIn 1s var(--ease) both;
-    }
-
-
-    @keyframes heroIn {
-
-      from {
-        opacity: 0;
-        transform:
-          translateY(35px);
-      }
-
-      to {
-        opacity: 1;
-        transform:
-          translateY(0);
-      }
-
-    }
-
-
-    .eyebrow {
-      display: inline-flex;
-
-      align-items: center;
-      gap: 11px;
-
-      color: var(--purple-light);
-
-      font-size: 12px;
-      font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: 3px;
-
-      margin-bottom: 28px;
-    }
-
-
-    .eyebrow-dot {
-      width: 8px;
-      height: 8px;
-
-      border-radius: 50%;
-
-      background:
-        var(--purple-light);
-
-      box-shadow:
-        0 0 16px
-        rgba(177,120,255,.9);
-
-      animation:
-        pulse 2s infinite;
-    }
-
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: .6;
-        transform: scale(.85);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-    }
-
-
-    .hero h1 {
-      font-size:
-        clamp(
-          58px,
-          9vw,
-          132px
-        );
-
-      line-height: .84;
-
-      letter-spacing:
-        clamp(
-          -5px,
-          -.5vw,
-          -9px
-        );
-
-      font-weight: 900;
-
-      text-transform: uppercase;
-
-      max-width: 1050px;
-
-      margin-bottom: 34px;
-    }
-
-
-    .hero h1 .outline {
-      color: transparent;
-
-      -webkit-text-stroke:
-        1px
-        rgba(255,255,255,.65);
-
-      text-shadow: none;
-    }
-
-
-    .hero h1 .gradient {
-      background:
-        linear-gradient(
-          110deg,
-          #ffffff 10%,
-          #cba9ff 50%,
-          #8b45ff 90%
-        );
-
-      -webkit-background-clip: text;
-      background-clip: text;
-
-      color: transparent;
-    }
-
-
-    .hero-description {
-      max-width: 610px;
-
-      color: var(--muted);
-
-      font-size:
-        clamp(
-          16px,
-          2vw,
-          19px
-        );
-
-      line-height: 1.75;
-
-      margin-bottom: 38px;
-    }
-
-
-    .hero-buttons {
-      display: flex;
-
-      gap: 13px;
-
-      flex-wrap: wrap;
-    }
-
-
-    .btn {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      gap: 10px;
-
-      min-height: 52px;
-
-      padding:
-        0
-        23px;
-
-      border-radius: 100px;
-
-      font-size: 13px;
-      font-weight: 800;
-
-      letter-spacing: .2px;
-
-      transition:
-        transform .3s var(--ease),
-        box-shadow .3s ease,
-        background .3s ease,
-        border-color .3s ease;
-    }
-
-
-    .btn-primary {
-      color: white;
-
-      background:
-        linear-gradient(
-          135deg,
-          #6f31e8,
-          #a86cff
-        );
-
-      box-shadow:
-        0 10px 35px
-        rgba(111,49,232,.22);
-    }
-
-
-    .btn-primary:hover {
-      transform:
-        translateY(-3px);
-
-      box-shadow:
-        0 16px 45px
-        rgba(111,49,232,.36);
-    }
-
-
-    .btn-secondary {
-      color: white;
-
-      border:
-        1px solid
-        rgba(255,255,255,.14);
-
-      background:
-        rgba(255,255,255,.035);
-    }
-
-
-    .btn-secondary:hover {
-      transform:
-        translateY(-3px);
-
-      border-color:
-        rgba(139,69,255,.45);
-
-      background:
-        rgba(139,69,255,.09);
-    }
-
-
-    .hero-meta {
-      display: flex;
-
-      align-items: center;
-      gap: 22px;
-
-      margin-top: 58px;
-
-      color: #777782;
-
-      font-size: 11px;
-
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-    }
-
-
-    .hero-meta-line {
-      width: 45px;
-      height: 1px;
-
-      background:
-        rgba(255,255,255,.18);
-    }
-
-
-    /* =========================================================
-       SECTION GLOBAL
-    ========================================================= */
-
-    section {
-      width: min(
-        var(--max),
-        calc(100% - 10vw)
-      );
-
-      margin:
-        0 auto;
-
-      padding:
-        130px 0;
-    }
-
-
-    .section-header {
-      display: flex;
-
-      align-items: flex-end;
-      justify-content: space-between;
-
-      gap: 40px;
-
-      margin-bottom: 60px;
-    }
-
-
-    .section-label {
-      display: block;
-
-      color: var(--purple-light);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 14px;
-    }
-
-
-    h2 {
-      font-size:
-        clamp(
-          42px,
-          6vw,
-          74px
-        );
-
-      line-height: .95;
-
-      letter-spacing: -3px;
-
-      color: white;
-    }
-
-
-    .section-intro {
-      max-width: 520px;
-
-      color: var(--muted);
-
-      font-size: 16px;
-
-      line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       SERVICES
-    ========================================================= */
-
-    .services-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap: 16px;
-    }
-
-
-    .service-card {
-      min-height: 390px;
-
-      padding: 34px;
-
-      position: relative;
-
-      display: flex;
-      flex-direction: column;
-
-      justify-content: space-between;
-
-      overflow: hidden;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 24px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.055),
-          rgba(255,255,255,.018)
-        );
-
-      transition:
-        transform .5s var(--ease),
-        border-color .4s ease,
-        background .4s ease;
-    }
-
-
-    .service-card:hover {
-      transform:
-        translateY(-9px);
-
-      border-color:
-        var(--border-purple);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(139,69,255,.11),
-          rgba(255,255,255,.025)
-        );
-    }
-
-
-    .service-number {
-      color: var(--purple-light);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: 2px;
-    }
-
-
-    .service-icon {
-      width: 68px;
-      height: 68px;
-
-      display: grid;
-      place-items: center;
-
-      border:
-        1px solid
-        rgba(139,69,255,.28);
-
-      border-radius: 18px;
-
-      background:
-        rgba(139,69,255,.08);
-
-      color: var(--purple-light);
-
-      font-size: 28px;
-
-      transition:
-        transform .4s var(--ease),
-        background .4s ease;
-    }
-
-
-    .service-card:hover .service-icon {
-      transform:
-        rotate(-6deg)
-        scale(1.08);
-
-      background:
-        rgba(139,69,255,.15);
-    }
-
-
-    .service-content h3 {
-      font-size: 26px;
-
-      letter-spacing: -1px;
-
-      margin-bottom: 12px;
-    }
-
-
-    .service-content p {
-      color: var(--muted);
-
-      font-size: 14px;
-
-      line-height: 1.8;
-    }
-
-
-    .service-glow {
-      position: absolute;
-
-      width: 180px;
-      height: 180px;
-
-      right: -100px;
-      bottom: -100px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(139,69,255,.14);
-
-      filter: blur(45px);
-
-      opacity: 0;
-
-      transition:
-        opacity .4s ease;
-    }
-
-
-    .service-card:hover .service-glow {
-      opacity: 1;
-    }
-
-
-    /* =========================================================
-       ABOUT
-    ========================================================= */
-
-    .about-section {
-      display: grid;
-
-      grid-template-columns:
-        1.1fr
-        .9fr;
-
-      gap: 90px;
-
-      align-items: center;
-    }
-
-
-    .about-copy p {
-      color: var(--muted);
-
-      font-size: 17px;
-
-      line-height: 1.9;
-
-      margin-top: 28px;
-
-      max-width: 670px;
-    }
-
-
-    .about-copy strong {
-      color: white;
-    }
-
-
-    .about-card {
-      position: relative;
-
-      padding: 36px;
-
-      min-height: 380px;
-
-      display: flex;
-      flex-direction: column;
-
-      justify-content: space-between;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 26px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(139,69,255,.12),
-          rgba(255,255,255,.025)
-        );
-
-      overflow: hidden;
-    }
-
-
-    .about-card::before {
-      content: "";
-
-      position: absolute;
-
-      width: 280px;
-      height: 280px;
-
-      right: -100px;
-      top: -110px;
-
-      border-radius: 50%;
-
-      border:
-        1px solid
-        rgba(177,120,255,.18);
-
-      box-shadow:
-        0 0 100px
-        rgba(139,69,255,.18);
-    }
-
-
-    .about-mark {
-      font-size: 90px;
-
-      font-weight: 900;
-
-      line-height: .8;
-
-      letter-spacing: -8px;
-
-      color: transparent;
-
-      -webkit-text-stroke:
-        1px
-        rgba(255,255,255,.24);
-    }
-
-
-    .about-card h3 {
-      font-size: 24px;
-
-      margin-bottom: 8px;
-    }
-
-
-    .about-card p {
-      color: var(--muted);
-
-      font-size: 14px;
-    }
-
-
-    /* =========================================================
-       STATS
-    ========================================================= */
-
-    .stats {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      margin-top: 70px;
-
-      border-top:
-        1px solid
-        var(--border);
-
-      border-bottom:
-        1px solid
-        var(--border);
-    }
-
-
-    .stat {
-      padding:
-        28px 20px;
-
-      border-right:
-        1px solid
-        var(--border);
-    }
-
-
-    .stat:last-child {
-      border-right: 0;
-    }
-
-
-    .stat-number {
-      display: block;
-
-      color: white;
-
-      font-size: 32px;
-      font-weight: 900;
-
-      letter-spacing: -1px;
-
-      margin-bottom: 5px;
-    }
-
-
-    .stat-label {
-      color: #777782;
-
-      font-size: 10px;
-      font-weight: 700;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.7px;
-    }
-
-
-    /* =========================================================
-       WHY
-    ========================================================= */
-
-    .why-list {
-      border-top:
-        1px solid
-        var(--border);
-    }
-
-
-    .why-item {
-      display: grid;
-
-      grid-template-columns:
-        80px
-        1fr
-        1fr;
-
-      gap: 30px;
-
-      align-items: center;
-
-      padding:
-        32px 0;
-
-      border-bottom:
-        1px solid
-        var(--border);
-
-      transition:
-        padding .35s var(--ease);
-    }
-
-
-    .why-item:hover {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-
-    .why-number {
-      color: var(--purple-light);
-
-      font-size: 12px;
-      font-weight: 800;
-
-      letter-spacing: 1px;
-    }
-
-
-    .why-item h3 {
-      font-size: 25px;
-
-      letter-spacing: -1px;
-    }
-
-
-    .why-item p {
-      color: var(--muted);
-
-      font-size: 14px;
-
-      line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       PORTFOLIO
-    ========================================================= */
-
-    .portfolio-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2,1fr);
-
-      gap: 18px;
-    }
-
-
-    .project {
-      position: relative;
-
-      min-height: 540px;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 26px;
-
-      overflow: hidden;
-
-      background:
-        #0d0d12;
-
-      transition:
-        transform .5s var(--ease),
-        border-color .4s ease;
-    }
-
-
-    .project:hover {
-      transform:
-        translateY(-8px);
-
-      border-color:
-        var(--border-purple);
-    }
-
-
-    .project:nth-child(1) {
-      grid-column: span 2;
-      min-height: 590px;
-    }
-
-
-    .project-visual {
-      position: absolute;
-      inset: 0;
-
-      overflow: hidden;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-
-    .project-visual::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 50% 50%,
-          rgba(255,255,255,.07),
-          transparent 35%
-        );
-    }
-
-
-    .project-visual::after {
-      content: "";
-
-      position: absolute;
-
-      width: 420px;
-      height: 420px;
-
-      border-radius: 50%;
-
-      border:
-        1px solid
-        rgba(255,255,255,.12);
-
-      box-shadow:
-        0 0 100px
-        rgba(139,69,255,.18);
-
-      transition:
-        transform 1s var(--ease);
-    }
-
-
-    .project:hover .project-visual::after {
-      transform:
-        scale(1.2)
-        rotate(18deg);
-    }
-
-
-    .nova {
-      background:
-        radial-gradient(
-          circle at 70% 30%,
-          #5630b4,
-          transparent 30%
-        ),
-        linear-gradient(
-          135deg,
-          #0a0710,
-          #171022 55%,
-          #08070d
-        );
-    }
-
-
-    .volt {
-      background:
-        radial-gradient(
-          circle at 30% 40%,
-          #573300,
-          transparent 35%
-        ),
-        linear-gradient(
-          135deg,
-          #0e0b07,
-          #241708 55%,
-          #080807
-        );
-    }
-
-
-    .luxe {
-      background:
-        radial-gradient(
-          circle at 65% 30%,
-          #654d73,
-          transparent 32%
-        ),
-        linear-gradient(
-          135deg,
-          #09070b,
-          #1b141c 55%,
-          #080709
-        );
-    }
-
-
-    .aurum {
-      background:
-        radial-gradient(
-          circle at 40% 35%,
-          #5a451b,
-          transparent 34%
-        ),
-        linear-gradient(
-          135deg,
-          #0d0a06,
-          #211a0c 55%,
-          #080704
-        );
-    }
-
-
-    .pulse {
-      background:
-        radial-gradient(
-          circle at 65% 55%,
-          #401f80,
-          transparent 34%
-        ),
-        linear-gradient(
-          135deg,
-          #08070d,
-          #181020 55%,
-          #06060a
-        );
-    }
-
-
-    .forge {
-      background:
-        radial-gradient(
-          circle at 35% 45%,
-          #552015,
-          transparent 32%
-        ),
-        linear-gradient(
-          135deg,
-          #0d0808,
-          #21100d 55%,
-          #070606
-        );
-    }
-
-
-    .project-logo {
-      position: relative;
-      z-index: 2;
-
-      font-size:
-        clamp(
-          60px,
-          10vw,
-          130px
-        );
-
-      font-weight: 900;
-
-      line-height: .8;
-
-      letter-spacing: -7px;
-
-      color: rgba(255,255,255,.93);
-
-      text-shadow:
-        0 0 50px
-        rgba(255,255,255,.12);
-
-      transition:
-        transform .7s var(--ease),
-        letter-spacing .7s var(--ease);
-    }
-
-
-    .project:hover .project-logo {
-      transform:
-        scale(1.06);
-
-      letter-spacing:
-        -4px;
-    }
-
-
-    .project-small {
-      position: absolute;
-
-      z-index: 3;
-
-      top: 28px;
-      left: 28px;
-
-      color: rgba(255,255,255,.55);
-
-      font-size: 9px;
-      font-weight: 800;
-
-      letter-spacing: 2.5px;
-
-      text-transform: uppercase;
-    }
-
-
-    .project-overlay {
-      position: absolute;
-
-      inset: auto 0 0;
-
-      z-index: 4;
-
-      padding:
-        90px 34px 34px;
-
-      background:
-        linear-gradient(
-          transparent,
-          rgba(5,5,8,.96) 75%
-        );
-    }
-
-
-    .project-tag {
-      color: var(--purple-light);
-
-      font-size: 9px;
-      font-weight: 800;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 8px;
-    }
-
-
-    .project-overlay h3 {
-      font-size: 29px;
-
-      letter-spacing: -1px;
-
-      margin-bottom: 7px;
-    }
-
-
-    .project-overlay p {
-      max-width: 570px;
-
-      color: #9d9da7;
-
-      font-size: 13px;
-
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       PRICING
-    ========================================================= */
-
-    .pricing-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap: 16px;
-    }
-
-
-    .price-card {
-      position: relative;
-
-      padding: 38px 32px;
-
-      min-height: 500px;
-
-      display: flex;
-      flex-direction: column;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius: 25px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.045),
-          rgba(255,255,255,.015)
-        );
-
-      transition:
-        transform .45s var(--ease),
-        border-color .4s ease;
-    }
-
-
-    .price-card:hover {
-      transform:
-        translateY(-8px);
-
-      border-color:
-        rgba(139,69,255,.4);
-    }
-
-
-    .price-card.featured {
-      border-color:
-        rgba(139,69,255,.55);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(139,69,255,.13),
-          rgba(255,255,255,.025)
-        );
-
-      box-shadow:
-        0 30px 100px
-        rgba(70,25,160,.13);
-    }
-
-
-    .popular {
-      position: absolute;
-
-      top: 18px;
-      right: 18px;
-
-      padding:
-        6px 10px;
-
-      border-radius: 100px;
-
-      background:
-        rgba(139,69,255,.16);
-
-      border:
-        1px solid
-        rgba(139,69,255,.32);
-
-      color: var(--purple-light);
-
-      font-size: 8px;
-      font-weight: 900;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-    }
-
-
-    .price-kicker {
-      color: var(--purple-light);
-
-      font-size: 10px;
-      font-weight: 800;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 15px;
-    }
-
-
-    .price-card h3 {
-      font-size: 27px;
-
-      letter-spacing: -1px;
-
-      margin-bottom: 12px;
-    }
-
-
-    .price {
-      font-size: 42px;
-
-      font-weight: 900;
-
-      letter-spacing: -2px;
-
-      margin-bottom: 25px;
-    }
-
-
-    .price span {
-      color: #777782;
-
-      font-size: 12px;
-      font-weight: 600;
-
-      letter-spacing: 0;
-    }
-
-
-    .features {
-      list-style: none;
-
-      display: flex;
-      flex-direction: column;
-
-      gap: 13px;
-
-      margin-bottom: 30px;
-    }
-
-
-    .features li {
-      display: flex;
-
-      gap: 10px;
-
-      color: #aaaab4;
-
-      font-size: 13px;
-    }
-
-
-    .features li::before {
-      content: "✓";
-
-      color: var(--purple-light);
-
-      font-weight: 900;
-    }
-
-
-    .price-card .btn {
-      margin-top: auto;
-
-      width: 100%;
-    }
-
-
-    /* =========================================================
-       CTA
-    ========================================================= */
-
-    .cta-section {
-      width:
-        min(
-          var(--max),
-          calc(100% - 10vw)
-        );
-
-      margin:
-        40px auto 130px;
-
-      padding:
-        90px 70px;
-
-      position: relative;
-
-      overflow: hidden;
-
-      text-align: center;
-
-      border:
-        1px solid
-        rgba(139,69,255,.24);
-
-      border-radius: 30px;
-
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(139,69,255,.18),
-          transparent 50%
-        ),
-
-        linear-gradient(
-          135deg,
-          rgba(139,69,255,.08),
-          rgba(255,255,255,.025)
-        );
-    }
-
-
-    .cta-section::before {
-      content: "";
-
-      position: absolute;
-
-      width: 500px;
-      height: 500px;
-
-      left: 50%;
-      top: -400px;
-
-      transform:
-        translateX(-50%);
-
-      border-radius: 50%;
-
-      border:
-        1px solid
-        rgba(139,69,255,.15);
-    }
-
-
-    .cta-section h2 {
-      max-width: 800px;
-
-      margin:
-        0 auto 20px;
-    }
-
-
-    .cta-section p {
-      max-width: 600px;
-
-      margin:
-        0 auto 32px;
-
-      color: var(--muted);
-
-      line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-
-    .contact-section {
-      display: grid;
-
-      grid-template-columns:
-        .8fr
-        1.2fr;
-
-      gap: 80px;
-
-      align-items: start;
-    }
-
-
-    .contact-copy h2 {
-      margin-bottom: 22px;
-    }
-
-
-    .contact-copy > p {
-      color: var(--muted);
-
-      font-size: 16px;
-
-      line-height: 1.8;
-
-      max-width: 450px;
-    }
-
-
-    .contact-points {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 12px;
-
-      margin-top: 34px;
-    }
-
-
-    .contact-point {
-      display: flex;
-
-      align-items: center;
-
-      gap: 12px;
-
-      color: #8d8d98;
-
-      font-size: 12px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.2px;
-    }
-
-
-    .contact-point span {
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background:
-        var(--purple);
-
-      box-shadow:
-        0 0 12px
-        rgba(139,69,255,.7);
-    }
-
-
-    .contact-form {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2,1fr);
-
-      gap: 14px;
-    }
-
-
-    .field {
-      display: flex;
-      flex-direction: column;
-
-      gap: 7px;
-    }
-
-
-    .field.full {
-      grid-column: span 2;
-    }
-
-
-    .field label {
-      color: #858590;
-
-      font-size: 9px;
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.7px;
-    }
-
-
-    .field input,
-    .field textarea,
-    .field select {
-      width: 100%;
-
-      border:
-        1px solid
-        rgba(255,255,255,.09);
-
-      border-radius: 14px;
-
-      background:
-        rgba(255,255,255,.035);
-
-      color: white;
-
-      outline: none;
-
-      padding:
-        15px 16px;
-
-      transition:
-        border-color .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-    }
-
-
-    .field select {
-      appearance: none;
-
-      background-image:
-        linear-gradient(
-          45deg,
-          transparent 50%,
-          #888 50%
-        ),
-        linear-gradient(
-          135deg,
-          #888 50%,
-          transparent 50%
-        );
-
-      background-position:
-        calc(100% - 18px) 21px,
-        calc(100% - 13px) 21px;
-
-      background-size:
-        5px 5px,
-        5px 5px;
-
-      background-repeat: no-repeat;
-    }
-
-
-    .field select option {
-      background:
-        #111117;
-
-      color: white;
-    }
-
-
-    .field input::placeholder,
-    .field textarea::placeholder {
-      color: #555560;
-    }
-
-
-    .field input:focus,
-    .field textarea:focus,
-    .field select:focus {
-      border-color:
-        rgba(139,69,255,.6);
-
-      background:
-        rgba(139,69,255,.05);
-
-      box-shadow:
-        0 0 0 4px
-        rgba(139,69,255,.07);
-    }
-
-
-    .field textarea {
-      min-height: 160px;
-
-      resize: vertical;
-    }
-
-
-    .form-submit {
-      grid-column: span 2;
-
-      margin-top: 5px;
-    }
-
-
-    .form-note {
-      grid-column: span 2;
-
-      color: #5f5f69;
-
-      font-size: 10px;
-
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      width:
-        min(
-          var(--max),
-          calc(100% - 10vw)
-        );
-
-      margin:
-        0 auto;
-
-      padding:
-        35px 0 45px;
-
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 20px;
-
-      border-top:
-        1px solid
-        var(--border);
-
-      color: #555560;
-
-      font-size: 10px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.6px;
-    }
-
-
-    .footer-brand {
-      color: #777782;
-
-      font-weight: 800;
-    }
-
-
-    /* =========================================================
-       BACK TO TOP
-    ========================================================= */
-
-    .back-top {
-      position: fixed;
-
-      right: 25px;
-      bottom: 25px;
-
-      width: 45px;
-      height: 45px;
-
-      display: grid;
-      place-items: center;
-
-      border:
-        1px solid
-        rgba(139,69,255,.35);
-
-      border-radius: 50%;
-
-      background:
-        rgba(10,10,14,.85);
-
-      color: white;
-
-      z-index: 900;
-
-      opacity: 0;
-      visibility: hidden;
-
-      transform:
-        translateY(15px);
-
-      transition:
-        all .3s var(--ease);
-    }
-
-
-    .back-top.visible {
-      opacity: 1;
-      visibility: visible;
-
-      transform:
-        translateY(0);
-    }
-
-
-    .back-top:hover {
-      background:
-        rgba(139,69,255,.2);
-
-      transform:
-        translateY(-3px);
-    }
-
-
-    /* =========================================================
-       REVEAL ANIMATIONS
-    ========================================================= */
-
-    .reveal {
-      opacity: 0;
-
-      transform:
-        translateY(35px);
-
-      transition:
-        opacity .8s var(--ease),
-        transform .8s var(--ease);
-    }
-
-
-    .reveal.visible {
-      opacity: 1;
-
-      transform:
-        translateY(0);
-    }
-
-
-    .delay-1 {
-      transition-delay: .08s;
-    }
-
-
-    .delay-2 {
-      transition-delay: .16s;
-    }
-
-
-    .delay-3 {
-      transition-delay: .24s;
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 900px) {
-
-      header {
-        height: 70px;
-      }
-
-
-      .logo {
-        width: 145px;
-      }
-
-
-      .menu-toggle {
-        display: block;
-      }
-
-
-      nav {
-        position: fixed;
-
-        inset:
-          70px 0 0;
-
-        padding:
-          45px 28px;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 28px;
-
-        background:
-          rgba(6,6,9,.97);
-
-        backdrop-filter:
-          blur(25px);
-
-        transform:
-          translateX(100%);
-
-        transition:
-          transform .45s var(--ease);
-      }
-
-
-      nav.open {
-        transform:
-          translateX(0);
-      }
-
-
-      nav a {
-        font-size: 25px;
-      }
-
-
-      nav a::after {
-        display: none;
-      }
-
-
-      .nav-cta {
-        padding:
-          0 !important;
-
-        border: 0 !important;
-
-        background: transparent !important;
-      }
-
-
-      .hero {
-        padding:
-          145px 28px 90px;
-
-        min-height:
-          auto;
-      }
-
-
-      .hero h1 {
-        font-size:
-          clamp(
-            52px,
-            14vw,
-            90px
-          );
-      }
-
-
-      .hero-orb {
-        width: 500px;
-        height: 500px;
-
-        right: -300px;
-      }
-
-
-      section {
-        width:
-          calc(100% - 56px);
-
-        padding:
-          90px 0;
-      }
-
-
-      .section-header {
-        display: block;
-
-        margin-bottom: 42px;
-      }
-
-
-      .section-intro {
-        margin-top: 20px;
-      }
-
-
-      .services-grid,
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .service-card {
-        min-height: 320px;
-      }
-
-
-      .about-section,
-      .contact-section {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-
-      .stats {
-        grid-template-columns:
-          repeat(2,1fr);
-      }
-
-
-      .stat:nth-child(2) {
-        border-right: 0;
-      }
-
-
-      .stat:nth-child(-n+2) {
-        border-bottom:
-          1px solid
-          var(--border);
-      }
-
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-
-
-      .project,
-      .project:nth-child(1) {
-        grid-column: auto;
-
-        min-height: 470px;
-      }
-
-
-      .why-item {
-        grid-template-columns:
-          50px
-          1fr;
-
-        gap: 18px;
-      }
-
-
-      .why-item p {
-        grid-column: 2;
-      }
-
-
-      .cta-section {
-        width:
-          calc(100% - 56px);
-
-        padding:
-          65px 25px;
-
-        margin-bottom:
-          90px;
-      }
-
-
-      .contact-form {
-        grid-template-columns: 1fr;
-      }
-
-
-      .field.full,
-      .form-submit,
-      .form-note {
-        grid-column: span 1;
-      }
-
-
-      footer {
-        width:
-          calc(100% - 56px);
-
-        flex-direction: column;
-
-        align-items: flex-start;
-      }
-
-    }
-
-
-    /* =========================================================
-       SMALL MOBILE
-    ========================================================= */
-
-    @media (max-width: 520px) {
-
-      .hero {
-        padding-top: 130px;
-      }
-
-
-      .hero h1 {
-        letter-spacing: -3px;
-      }
-
-
-      .hero-meta {
-        flex-wrap: wrap;
-
-        gap: 12px;
-      }
-
-
-      h2 {
-        letter-spacing: -2px;
-      }
-
-
-      .project-overlay {
-        padding:
-          90px 23px 23px;
-      }
-
-
-      .project-logo {
-        font-size:
-          65px;
-      }
-
-
-      .about-card {
-        min-height: 330px;
-
-        padding: 28px;
-      }
-
-
-      .price {
-        font-size: 38px;
-      }
-
-
-      .cta-section h2 {
-        font-size: 43px;
-      }
-
-    }
-
-
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-
-        transition-duration: .01ms !important;
-      }
-
-    }
-
-  </style>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-  <!-- =======================================================
-       CURSOR
-  ======================================================== -->
+<!-- =========================
+     BACKGROUND
+========================= -->
+<div class="noise"></div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
 
-  <div class="cursor-glow" id="cursorGlow"></div>
+<!-- =========================
+     NAVIGATION
+========================= -->
+<header class="site-header">
 
-
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
-
-  <header id="header">
-
-    <a
-      href="#top"
-      class="brand"
-      aria-label="SCHEMATIX CREATIV Home"
-    >
-
-      <img
-        src="logo.png"
-        class="logo"
-        alt="SCHEMATIX CREATIV"
-      >
-
+    <a href="#" class="brand">
+        <img src="logo.png" alt="SCHEMATIX CREATIV">
     </a>
 
-
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      aria-label="Open navigation"
-      aria-expanded="false"
-    >
-
-      <span></span>
-      <span></span>
-
-    </button>
-
-
-    <nav id="nav">
-
-      <a href="#services">Services</a>
-
-      <a href="#about">About</a>
-
-      <a href="#work">Work</a>
-
-      <a href="#pricing">Packages</a>
-
-      <a href="#contact" class="nav-cta">
-        Start a Project
-      </a>
-
+    <nav class="desktop-nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-  </header>
+    <a href="#contact" class="nav-cta">
+        Start a Project
+        <span>↗</span>
+    </a>
 
+    <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+    </button>
 
-  <main id="top">
+</header>
 
+<!-- =========================
+     MOBILE MENU
+========================= -->
+<div class="mobile-menu">
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <div class="mobile-menu-inner">
 
-    <section class="hero">
+        <div class="mobile-label">NAVIGATION</div>
 
-      <div class="hero-orb"></div>
+        <a href="#services">Services <span>01</span></a>
+        <a href="#about">About <span>02</span></a>
+        <a href="#work">Work <span>03</span></a>
+        <a href="#pricing">Pricing <span>04</span></a>
+        <a href="#contact">Contact <span>05</span></a>
 
-      <div class="hero-grid"></div>
-
-
-      <div class="hero-content">
-
-        <div class="eyebrow">
-
-          <span class="eyebrow-dot"></span>
-
-          Creative Branding Studio
-
+        <div class="mobile-footer">
+            SCHEMATIX CREATIV
         </div>
 
+    </div>
 
-        <h1>
+</div>
 
-          WE BUILD
+<!-- =========================
+     HERO
+========================= -->
+<main>
 
-          <span class="outline">
-            BRANDS
-          </span>
+<section class="hero">
 
-          PEOPLE
+    <div class="hero-grid"></div>
 
-          <span class="gradient">
-            REMEMBER.
-          </span>
+    <div class="hero-content">
 
+        <div class="eyebrow reveal">
+            <span class="status-dot"></span>
+            CREATIVE BRANDING STUDIO
+        </div>
+
+        <h1 class="reveal delay-1">
+            WE BUILD
+            <span>BRANDS</span>
+            PEOPLE
+            <em>REMEMBER.</em>
         </h1>
 
-
-        <p class="hero-description">
-
-          SCHEMATIX CREATIV turns ideas into
-          distinctive visual identities that
-          make businesses look established,
-          memorable, and ready to grow.
-
+        <p class="hero-description reveal delay-2">
+            Strategic branding, graphic design, and visual identity
+            for businesses ready to look as serious as their vision.
         </p>
 
+        <div class="hero-actions reveal delay-3">
 
-        <div class="hero-buttons">
+            <a href="#work" class="button button-primary">
+                Explore Our Work
+                <span>↗</span>
+            </a>
 
-          <a
-            href="#work"
-            class="btn btn-primary"
-          >
-
-            Explore Our Work
-
-            <span>↗</span>
-
-          </a>
-
-
-          <a
-            href="#contact"
-            class="btn btn-secondary"
-          >
-
-            Start Your Project
-
-          </a>
+            <a href="#contact" class="button button-outline">
+                Start Your Project
+            </a>
 
         </div>
 
+    </div>
 
-        <div class="hero-meta">
+    <div class="hero-side-text">
+        <span>EST. 2026</span>
+        <span>BRAND / DESIGN / DIRECTION</span>
+    </div>
 
-          <span>Brand Identity</span>
+    <div class="hero-scroll">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="scroll-line"></div>
+    </div>
 
-          <span class="hero-meta-line"></span>
-
-          <span>Graphic Design</span>
-
-          <span class="hero-meta-line"></span>
-
-          <span>Creative Direction</span>
-
-        </div>
-
-      </div>
-
-    </section>
+</section>
 
 
+<!-- =========================
+     MARQUEE
+========================= -->
+<div class="marquee">
 
-    <!-- =====================================================
-         SERVICES
-    ====================================================== -->
+    <div class="marquee-track">
 
-    <section id="services">
+        <span>BRAND IDENTITY</span>
+        <b>✦</b>
+        <span>GRAPHIC DESIGN</span>
+        <b>✦</b>
+        <span>CREATIVE DIRECTION</span>
+        <b>✦</b>
+        <span>VISUAL SYSTEMS</span>
+        <b>✦</b>
 
-      <div class="section-header reveal">
+        <span>BRAND IDENTITY</span>
+        <b>✦</b>
+        <span>GRAPHIC DESIGN</span>
+        <b>✦</b>
+        <span>CREATIVE DIRECTION</span>
+        <b>✦</b>
+        <span>VISUAL SYSTEMS</span>
+        <b>✦</b>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+<section id="services" class="section services-section">
+
+    <div class="section-heading">
 
         <div>
+            <span class="section-number">01 / SERVICES</span>
 
-          <span class="section-label">
-            What We Do
-          </span>
-
-          <h2>
-            Built to<br>
-            Stand Out.
-          </h2>
-
+            <h2>
+                DESIGN WITH
+                <span>INTENTION.</span>
+            </h2>
         </div>
 
-
-        <p class="section-intro">
-
-          From the first sketch to the final
-          brand system, we create visual
-          experiences designed to make your
-          business impossible to overlook.
-
+        <p>
+            We turn ideas into visual systems that make businesses
+            recognizable, credible, and impossible to overlook.
         </p>
 
-      </div>
+    </div>
 
 
-      <div class="services-grid">
+    <div class="service-grid">
 
+        <article class="service-card">
 
-        <article class="service-card reveal">
+            <div class="service-top">
+                <span>01</span>
+                <span>IDENTITY</span>
+            </div>
 
-          <div>
+            <div class="service-icon">✦</div>
 
-            <span class="service-number">
-              01 / IDENTITY
-            </span>
-
-          </div>
-
-
-          <div class="service-icon">
-            ◇
-          </div>
-
-
-          <div class="service-content">
-
-            <h3>
-              Brand Identity
-            </h3>
+            <h3>Brand Identity</h3>
 
             <p>
-
-              Logos, color systems, typography,
-              visual direction, and complete
-              identity systems built around
-              your business.
-
+                Logos, typography, color systems, visual language,
+                and complete identity systems built around your business.
             </p>
 
-          </div>
-
-
-          <div class="service-glow"></div>
+            <a href="#contact">
+                Explore Service <span>↗</span>
+            </a>
 
         </article>
 
 
+        <article class="service-card featured-service">
 
-        <article class="service-card reveal delay-1">
+            <div class="service-top">
+                <span>02</span>
+                <span>DESIGN</span>
+            </div>
 
-          <div>
+            <div class="service-icon">◈</div>
 
-            <span class="service-number">
-              02 / DESIGN
-            </span>
-
-          </div>
-
-
-          <div class="service-icon">
-            ✦
-          </div>
-
-
-          <div class="service-content">
-
-            <h3>
-              Graphic Design
-            </h3>
+            <h3>Graphic Design</h3>
 
             <p>
-
-              Marketing graphics, social media
-              visuals, promotional materials,
-              digital campaigns, and polished
-              creative assets.
-
+                Marketing graphics, social content, promotional materials,
+                digital assets, and campaign visuals designed to perform.
             </p>
 
-          </div>
-
-
-          <div class="service-glow"></div>
+            <a href="#contact">
+                Explore Service <span>↗</span>
+            </a>
 
         </article>
 
 
+        <article class="service-card">
 
-        <article class="service-card reveal delay-2">
+            <div class="service-top">
+                <span>03</span>
+                <span>DIRECTION</span>
+            </div>
 
-          <div>
+            <div class="service-icon">⌁</div>
 
-            <span class="service-number">
-              03 / DIRECTION
-            </span>
-
-          </div>
-
-
-          <div class="service-icon">
-            ↗
-          </div>
-
-
-          <div class="service-content">
-
-            <h3>
-              Creative Direction
-            </h3>
+            <h3>Creative Direction</h3>
 
             <p>
-
-              Strategic visual guidance that
-              keeps your brand consistent,
-              recognizable, and professional
-              across every platform.
-
+                A cohesive creative vision that keeps your brand
+                consistent across every touchpoint and platform.
             </p>
 
-          </div>
-
-
-          <div class="service-glow"></div>
+            <a href="#contact">
+                Explore Service <span>↗</span>
+            </a>
 
         </article>
 
-      </div>
+    </div>
 
-    </section>
+</section>
 
 
+<!-- =========================
+     ABOUT
+========================= -->
+<section id="about" class="section about-section">
 
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
+    <div class="about-visual">
 
-    <section id="about">
+        <div class="about-orbit orbit-one"></div>
+        <div class="about-orbit orbit-two"></div>
+        <div class="about-core">S</div>
 
-      <div class="about-section">
+        <span class="orbit-label label-one">STRATEGY</span>
+        <span class="orbit-label label-two">IDENTITY</span>
+        <span class="orbit-label label-three">DESIGN</span>
 
+    </div>
 
-        <div class="about-copy reveal">
 
-          <span class="section-label">
-            About SCHEMATIX
-          </span>
+    <div class="about-content">
 
-          <h2>
-            Design With
-            <br>
-            <span class="gradient">
-              Intention.
-            </span>
-          </h2>
+        <span class="section-number">02 / ABOUT</span>
 
+        <h2>
+            YOUR BRAND
+            <span>DESERVES</span>
+            MORE.
+        </h2>
 
-          <p>
-
-            <strong>
-              SCHEMATIX CREATIV
-            </strong>
-            is a creative studio focused
-            on building brands with clarity,
-            personality, and purpose.
-
-          </p>
-
-
-          <p>
-
-            We believe good design should do
-            more than look good. It should
-            communicate what your business
-            stands for, create recognition,
-            and give your audience a reason
-            to remember you.
-
-          </p>
-
-        </div>
-
-
-        <div class="about-card reveal delay-1">
-
-          <div class="about-mark">
-            S.
-          </div>
-
-
-          <div>
-
-            <h3>
-              Strategy meets creativity.
-            </h3>
-
-            <p>
-
-              Every visual decision has a
-              purpose — from typography and
-              color to composition and tone.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="stats reveal">
-
-        <div class="stat">
-
-          <span class="stat-number">
-            01
-          </span>
-
-          <span class="stat-label">
-            Creative Strategy
-          </span>
-
-        </div>
-
-
-        <div class="stat">
-
-          <span class="stat-number">
-            02
-          </span>
-
-          <span class="stat-label">
-            Visual Identity
-          </span>
-
-        </div>
-
-
-        <div class="stat">
-
-          <span class="stat-number">
-            03
-          </span>
-
-          <span class="stat-label">
-            Digital Design
-          </span>
-
-        </div>
-
-
-        <div class="stat">
-
-          <span class="stat-number">
-            04
-          </span>
-
-          <span class="stat-label">
-            Brand Direction
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         WHY SCHEMATIX
-    ====================================================== -->
-
-    <section id="why">
-
-      <div class="section-header reveal">
-
-        <div>
-
-          <span class="section-label">
-            The Difference
-          </span>
-
-          <h2>
-            Why<br>
-            SCHEMATIX?
-          </h2>
-
-        </div>
-
-
-        <p class="section-intro">
-
-          Your brand deserves more than a
-          collection of generic templates.
-          We build visual systems designed
-          specifically around your business.
-
+        <p class="lead">
+            SCHEMATIX CREATIV is a modern creative studio focused on
+            building brands with personality, structure, and purpose.
         </p>
 
-      </div>
-
-
-      <div class="why-list">
-
-
-        <div class="why-item reveal">
-
-          <span class="why-number">
-            01
-          </span>
-
-          <h3>
-            Creative Strategy
-          </h3>
-
-          <p>
-
-            We connect visual decisions
-            to your business goals so your
-            identity has direction, not
-            just decoration.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="why-item reveal">
-
-          <span class="why-number">
-            02
-          </span>
-
-          <h3>
-            Purposeful Design
-          </h3>
-
-          <p>
-
-            Every logo, layout, color,
-            and visual element is created
-            to communicate something
-            meaningful about your brand.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="why-item reveal">
-
-          <span class="why-number">
-            03
-          </span>
-
-          <h3>
-            Built for Recognition
-          </h3>
-
-          <p>
-
-            We create consistent visual
-            systems that help your audience
-            recognize your business wherever
-            they encounter it.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PORTFOLIO
-    ====================================================== -->
-
-    <section id="work">
-
-      <div class="section-header reveal">
-
-        <div>
-
-          <span class="section-label">
-            Selected Work
-          </span>
-
-          <h2>
-            Featured<br>
-            Projects.
-          </h2>
-
-        </div>
-
-
-        <p class="section-intro">
-
-          A collection of conceptual brand
-          directions showcasing the visual
-          possibilities SCHEMATIX CREATIV
-          can create.
-
+        <p>
+            We combine strategic thinking with bold visual design to
+            create identities that don't simply look good — they give
+            businesses a recognizable presence.
         </p>
 
-      </div>
+        <div class="about-stats">
+
+            <div>
+                <strong>01</strong>
+                <span>Strategic Approach</span>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <span>Custom Design</span>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <span>Built to Scale</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-      <div class="portfolio-grid">
+<!-- =========================
+     WORK
+========================= -->
+<section id="work" class="section work-section">
 
+    <div class="section-heading">
+
+        <div>
+            <span class="section-number">03 / SELECTED WORK</span>
+
+            <h2>
+                CONCEPTS
+                <span>WITH CHARACTER.</span>
+            </h2>
+        </div>
+
+        <p>
+            A glimpse at the visual direction, identity systems,
+            and creative concepts SCHEMATIX CREATIV can bring to life.
+        </p>
+
+    </div>
+
+
+    <div class="portfolio-grid">
 
         <!-- NOVA -->
+        <article class="portfolio-card portfolio-large">
 
-        <article class="project reveal">
+            <div class="portfolio-art nova-art">
 
-          <div class="project-visual nova">
+                <div class="art-grid"></div>
 
-            <span class="project-small">
-              Creative Technology
-            </span>
+                <div class="nova-ring"></div>
 
-            <div class="project-logo">
-              NOVA
+                <div class="art-word">
+                    NOVA
+                </div>
+
+                <div class="art-caption">
+                    CREATIVE TECHNOLOGY
+                </div>
+
             </div>
 
-          </div>
+            <div class="portfolio-info">
 
+                <div>
+                    <span>01 / BRAND IDENTITY</span>
+                    <h3>NOVA Creative</h3>
+                </div>
 
-          <div class="project-overlay">
+                <p>
+                    A futuristic identity concept built around
+                    movement, technology, and visual precision.
+                </p>
 
-            <div class="project-tag">
-              01 / Brand Identity
             </div>
-
-            <h3>
-              NOVA Creative
-            </h3>
-
-            <p>
-
-              A futuristic identity system
-              combining bold typography,
-              modern structure, and a
-              technology-driven visual language.
-
-            </p>
-
-          </div>
 
         </article>
-
 
 
         <!-- VOLT -->
+        <article class="portfolio-card">
 
-        <article class="project reveal">
+            <div class="portfolio-art volt-art">
 
-          <div class="project-visual volt">
+                <div class="volt-lines"></div>
 
-            <span class="project-small">
-              Energy / Performance
-            </span>
+                <div class="volt-word">
+                    VOLT
+                </div>
 
-            <div class="project-logo">
-              VOLT
+                <div class="art-caption">
+                    ENERGY / PERFORMANCE
+                </div>
+
             </div>
 
-          </div>
+            <div class="portfolio-info">
 
+                <div>
+                    <span>02 / CAMPAIGN</span>
+                    <h3>VOLT Energy</h3>
+                </div>
 
-          <div class="project-overlay">
+                <p>
+                    High-energy campaign direction designed for
+                    a bold digital presence.
+                </p>
 
-            <div class="project-tag">
-              02 / Marketing
             </div>
-
-            <h3>
-              VOLT Energy
-            </h3>
-
-            <p>
-
-              A high-energy campaign direction
-              designed for a bold, competitive
-              digital presence.
-
-            </p>
-
-          </div>
 
         </article>
-
 
 
         <!-- LUXE -->
+        <article class="portfolio-card">
 
-        <article class="project reveal">
+            <div class="portfolio-art luxe-art">
 
-          <div class="project-visual luxe">
+                <div class="luxe-circle"></div>
 
-            <span class="project-small">
-              Modern Lifestyle
-            </span>
+                <div class="luxe-word">
+                    LUXE
+                </div>
 
-            <div class="project-logo">
-              LUXE
+                <div class="art-caption">
+                    MODERN LIFESTYLE
+                </div>
+
             </div>
 
-          </div>
+            <div class="portfolio-info">
 
+                <div>
+                    <span>03 / DIGITAL BRAND</span>
+                    <h3>LUXE Studio</h3>
+                </div>
 
-          <div class="project-overlay">
+                <p>
+                    A refined digital identity combining minimalist
+                    structure with premium visual direction.
+                </p>
 
-            <div class="project-tag">
-              03 / Digital Brand
             </div>
-
-            <h3>
-              LUXE Studio
-            </h3>
-
-            <p>
-
-              A refined identity direction
-              focused on minimalist layouts,
-              sophisticated typography,
-              and premium presentation.
-
-            </p>
-
-          </div>
 
         </article>
 
+    </div>
+
+</section>
 
 
-        <!-- AURUM -->
+<!-- =========================
+     PROCESS
+========================= -->
+<section class="section process-section">
 
-        <article class="project reveal">
-
-          <div class="project-visual aurum">
-
-            <span class="project-small">
-              Luxury / Lifestyle
-            </span>
-
-            <div class="project-logo">
-              AURUM
-            </div>
-
-          </div>
-
-
-          <div class="project-overlay">
-
-            <div class="project-tag">
-              04 / Brand Identity
-            </div>
-
-            <h3>
-              AURUM Atelier
-            </h3>
-
-            <p>
-
-              An elevated identity concept
-              built around luxury, restraint,
-              and sophisticated visual
-              storytelling.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- PULSE -->
-
-        <article class="project reveal">
-
-          <div class="project-visual pulse">
-
-            <span class="project-small">
-              Digital Media
-            </span>
-
-            <div class="project-logo">
-              PULSE
-            </div>
-
-          </div>
-
-
-          <div class="project-overlay">
-
-            <div class="project-tag">
-              05 / Digital Identity
-            </div>
-
-            <h3>
-              PULSE Media
-            </h3>
-
-            <p>
-
-              A modern digital identity
-              designed for movement, culture,
-              and social-first communication.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- FORGE -->
-
-        <article class="project reveal">
-
-          <div class="project-visual forge">
-
-            <span class="project-small">
-              Creative Studio
-            </span>
-
-            <div class="project-logo">
-              FORGE
-            </div>
-
-          </div>
-
-
-          <div class="project-overlay">
-
-            <div class="project-tag">
-              06 / Brand System
-            </div>
-
-            <h3>
-              FORGE Studio
-            </h3>
-
-            <p>
-
-              A bold creative identity
-              emphasizing craftsmanship,
-              confidence, and strong visual
-              structure.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PRICING
-    ====================================================== -->
-
-    <section id="pricing">
-
-      <div class="section-header reveal">
+    <div class="section-heading">
 
         <div>
+            <span class="section-number">04 / PROCESS</span>
 
-          <span class="section-label">
-            Start Here
-          </span>
-
-          <h2>
-            Choose Your
-            <br>
-            <span class="gradient">
-              Direction.
-            </span>
-          </h2>
-
+            <h2>
+                FROM IDEA
+                <span>TO IDENTITY.</span>
+            </h2>
         </div>
 
-
-        <p class="section-intro">
-
-          Straightforward starting points
-          for businesses at different stages.
-          Every project can be customized
-          around your needs.
-
+        <p>
+            A straightforward creative process designed to keep
+            projects focused, intentional, and moving forward.
         </p>
-
-      </div>
-
-
-      <div class="pricing-grid">
-
-
-        <!-- STARTER -->
-
-        <article class="price-card reveal">
-
-          <span class="price-kicker">
-            Foundation
-          </span>
-
-          <h3>
-            Starter Brand
-          </h3>
-
-          <div class="price">
-            $299
-            <span>
-              starting at
-            </span>
-          </div>
-
-
-          <ul class="features">
-
-            <li>
-              Custom Logo
-            </li>
-
-            <li>
-              Color Palette
-            </li>
-
-            <li>
-              Typography Guide
-            </li>
-
-            <li>
-              2 Revisions
-            </li>
-
-            <li>
-              Final Digital Files
-            </li>
-
-          </ul>
-
-
-          <a
-            href="#contact"
-            class="btn btn-secondary"
-          >
-            Get Started
-          </a>
-
-        </article>
-
-
-
-        <!-- PROFESSIONAL -->
-
-        <article class="price-card featured reveal delay-1">
-
-          <span class="popular">
-            Most Complete
-          </span>
-
-          <span class="price-kicker">
-            Full Identity
-          </span>
-
-          <h3>
-            Professional Brand
-          </h3>
-
-          <div class="price">
-            $699
-            <span>
-              starting at
-            </span>
-          </div>
-
-
-          <ul class="features">
-
-            <li>
-              Complete Brand Identity
-            </li>
-
-            <li>
-              Primary + Secondary Logos
-            </li>
-
-            <li>
-              Brand Color System
-            </li>
-
-            <li>
-              Typography System
-            </li>
-
-            <li>
-              Brand Guidelines
-            </li>
-
-            <li>
-              Social Media Kit
-            </li>
-
-          </ul>
-
-
-          <a
-            href="#contact"
-            class="btn btn-primary"
-          >
-            Get Started
-          </a>
-
-        </article>
-
-
-
-        <!-- CUSTOM -->
-
-        <article class="price-card reveal delay-2">
-
-          <span class="price-kicker">
-            Tailored
-          </span>
-
-          <h3>
-            Custom Project
-          </h3>
-
-          <div class="price">
-            Let's Talk
-          </div>
-
-
-          <ul class="features">
-
-            <li>
-              Custom Scope
-            </li>
-
-            <li>
-              Strategy + Direction
-            </li>
-
-            <li>
-              Custom Deliverables
-            </li>
-
-            <li>
-              Larger Brand Systems
-            </li>
-
-            <li>
-              Campaign & Digital Work
-            </li>
-
-          </ul>
-
-
-          <a
-            href="#contact"
-            class="btn btn-secondary"
-          >
-            Request a Quote
-          </a>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CTA
-    ====================================================== -->
-
-    <div class="cta-section reveal">
-
-      <span class="section-label">
-        Your Next Move
-      </span>
-
-      <h2>
-        Ready to build
-        something different?
-      </h2>
-
-      <p>
-
-        Whether you're launching a new
-        business, refreshing an existing
-        brand, or simply ready to level up
-        your visual presence, let's create
-        something worth remembering.
-
-      </p>
-
-
-      <a
-        href="#contact"
-        class="btn btn-primary"
-      >
-
-        Start Your Project
-
-        <span>↗</span>
-
-      </a>
 
     </div>
 
 
+    <div class="process-list">
 
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
+        <div class="process-item">
 
-    <section id="contact">
+            <div class="process-number">01</div>
 
-      <div class="contact-section">
-
-
-        <div class="contact-copy reveal">
-
-          <span class="section-label">
-            Let's Work Together
-          </span>
-
-          <h2>
-            Tell Us
-            <br>
-            What You're
-            <br>
-            <span class="gradient">
-              Building.
-            </span>
-          </h2>
-
-
-          <p>
-
-            Have an idea, a new business,
-            or an existing brand that needs
-            a stronger identity? Send over
-            the details and let's talk about
-            what we can create.
-
-          </p>
-
-
-          <div class="contact-points">
-
-            <div class="contact-point">
-
-              <span></span>
-
-              Brand Identity
-
+            <div>
+                <h3>Discover</h3>
+                <p>
+                    We learn about your business, audience, goals,
+                    and the position you want your brand to occupy.
+                </p>
             </div>
 
-
-            <div class="contact-point">
-
-              <span></span>
-
-              Graphic Design
-
-            </div>
-
-
-            <div class="contact-point">
-
-              <span></span>
-
-              Creative Direction
-
-            </div>
-
-          </div>
+            <span class="process-arrow">↗</span>
 
         </div>
 
 
+        <div class="process-item">
 
-        <form
-          class="contact-form reveal delay-1"
-          id="contactForm"
-        >
+            <div class="process-number">02</div>
+
+            <div>
+                <h3>Develop</h3>
+                <p>
+                    Concepts become visual systems through strategy,
+                    exploration, typography, color, and design.
+                </p>
+            </div>
+
+            <span class="process-arrow">↗</span>
+
+        </div>
 
 
-          <div class="field">
+        <div class="process-item">
 
-            <label for="name">
-              Name
-            </label>
+            <div class="process-number">03</div>
+
+            <div>
+                <h3>Deliver</h3>
+                <p>
+                    Your final identity and creative assets are
+                    organized and prepared for real-world use.
+                </p>
+            </div>
+
+            <span class="process-arrow">↗</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRICING
+========================= -->
+<section id="pricing" class="section pricing-section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-number">05 / PACKAGES</span>
+
+            <h2>
+                START
+                <span>BUILDING.</span>
+            </h2>
+        </div>
+
+        <p>
+            Flexible starting points for businesses at different
+            stages of their visual journey.
+        </p>
+
+    </div>
+
+
+    <div class="pricing-grid">
+
+        <article class="price-card">
+
+            <span class="price-label">01 / STARTER</span>
+
+            <h3>Starter Brand</h3>
+
+            <div class="price">
+                <small>FROM</small>
+                $299
+            </div>
+
+            <p>
+                A focused foundation for businesses that need
+                a professional visual starting point.
+            </p>
+
+            <ul>
+                <li>Custom Logo</li>
+                <li>Color Palette</li>
+                <li>Typography Guide</li>
+                <li>2 Revision Rounds</li>
+            </ul>
+
+            <a href="#contact" class="price-button">
+                Get Started <span>↗</span>
+            </a>
+
+        </article>
+
+
+        <article class="price-card price-featured">
+
+            <div class="popular">MOST REQUESTED</div>
+
+            <span class="price-label">02 / PROFESSIONAL</span>
+
+            <h3>Professional Brand</h3>
+
+            <div class="price">
+                <small>FROM</small>
+                $699
+            </div>
+
+            <p>
+                A complete identity system designed for businesses
+                ready for a stronger and more consistent presence.
+            </p>
+
+            <ul>
+                <li>Complete Brand Identity</li>
+                <li>Logo Suite</li>
+                <li>Brand Guidelines</li>
+                <li>Social Media Kit</li>
+            </ul>
+
+            <a href="#contact" class="price-button">
+                Get Started <span>↗</span>
+            </a>
+
+        </article>
+
+
+        <article class="price-card">
+
+            <span class="price-label">03 / CUSTOM</span>
+
+            <h3>Custom Project</h3>
+
+            <div class="price talk-price">
+                LET'S TALK
+            </div>
+
+            <p>
+                Custom creative solutions built around your
+                business, scope, timeline, and goals.
+            </p>
+
+            <ul>
+                <li>Custom Scope</li>
+                <li>Creative Direction</li>
+                <li>Flexible Deliverables</li>
+                <li>Project-Based Pricing</li>
+            </ul>
+
+            <a href="#contact" class="price-button">
+                Request Quote <span>↗</span>
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+<section class="cta-section">
+
+    <div class="cta-glow"></div>
+
+    <span class="section-number">LET'S BUILD</span>
+
+    <h2>
+        READY TO MAKE
+        <span>AN IMPRESSION?</span>
+    </h2>
+
+    <p>
+        Bring us the idea. We'll help turn it into something
+        people remember.
+    </p>
+
+    <a href="#contact" class="button button-primary">
+        Start Your Project
+        <span>↗</span>
+    </a>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section id="contact" class="section contact-section">
+
+    <div class="contact-heading">
+
+        <span class="section-number">06 / CONTACT</span>
+
+        <h2>
+            LET'S CREATE
+            <span>SOMETHING.</span>
+        </h2>
+
+        <p>
+            Tell us what you're building, what you need,
+            and where you want to take it.
+        </p>
+
+    </div>
+
+
+    <form
+        class="contact-form"
+        action="https://formsubmit.co/onlyadmin@schematixcreativ.co.site"
+        method="POST"
+    >
+
+        <input type="hidden" name="_subject" value="New SCHEMATIX CREATIV Project Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="form-row">
+
+            <div class="field">
+                <label for="name">NAME</label>
+                <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                >
+            </div>
+
+            <div class="field">
+                <label for="email">EMAIL</label>
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="you@company.com"
+                    required
+                >
+            </div>
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="company">BUSINESS / BRAND</label>
 
             <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Your name"
-              required
+                id="company"
+                type="text"
+                name="company"
+                placeholder="Your business or brand"
             >
 
-          </div>
+        </div>
 
 
+        <div class="field">
 
-          <div class="field">
+            <label for="service">WHAT DO YOU NEED?</label>
 
-            <label for="email">
-              Email
-            </label>
+            <select id="service" name="service">
 
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-              required
-            >
-
-          </div>
-
-
-
-          <div class="field">
-
-            <label for="company">
-              Business / Company
-            </label>
-
-            <input
-              id="company"
-              name="company"
-              type="text"
-              placeholder="Your business"
-            >
-
-          </div>
-
-
-
-          <div class="field">
-
-            <label for="budget">
-              Project Budget
-            </label>
-
-            <select
-              id="budget"
-              name="budget"
-            >
-
-              <option value="">
-                Select a range
-              </option>
-
-              <option>
-                Under $300
-              </option>
-
-              <option>
-                $300 – $699
-              </option>
-
-              <option>
-                $700 – $1,499
-              </option>
-
-              <option>
-                $1,500+
-              </option>
-
-              <option>
-                Not sure yet
-              </option>
+                <option value="">Select a service</option>
+                <option value="Brand Identity">Brand Identity</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Creative Direction">Creative Direction</option>
+                <option value="Custom Project">Custom Project</option>
 
             </select>
 
-          </div>
+        </div>
 
 
+        <div class="field">
 
-          <div class="field full">
-
-            <label for="project">
-              Project Details
-            </label>
+            <label for="message">PROJECT DETAILS</label>
 
             <textarea
-              id="project"
-              name="project"
-              placeholder="Tell us about your business, what you need, and what you're trying to create..."
-              required
+                id="message"
+                name="message"
+                placeholder="Tell us about your project..."
+                required
             ></textarea>
 
-          </div>
+        </div>
 
 
+        <button type="submit" class="form-submit">
+            Send Project Inquiry
+            <span>↗</span>
+        </button>
 
-          <div class="form-submit">
+    </form>
 
-            <button
-              type="submit"
-              class="btn btn-primary"
-              style="width:100%;"
-            >
+</section>
 
-              Send Project Inquiry
-
-              <span>↗</span>
-
-            </button>
-
-          </div>
+</main>
 
 
-          <p class="form-note">
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
 
-            By submitting this form, you're
-            requesting a project conversation.
-            We'll use the information you provide
-            to respond to your inquiry.
+    <div class="footer-top">
 
-          </p>
+        <img
+            src="logo.png"
+            alt="SCHEMATIX CREATIV"
+            class="footer-logo"
+        >
 
+        <p>
+            Brands with structure.<br>
+            Design with intention.
+        </p>
 
-        </form>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
-
-  <footer>
-
-    <div class="footer-brand">
-      SCHEMATIX CREATIV
     </div>
 
 
-    <div>
-      © 2026 SCHEMATIX CREATIV
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 SCHEMATIX CREATIV
+        </span>
+
+        <span>
+            BRAND / DESIGN / DIRECTION
+        </span>
+
+        <a href="#">
+            BACK TO TOP ↑
+        </a>
+
     </div>
 
-
-    <div>
-      Branding • Design • Direction
-    </div>
-
-  </footer>
+</footer>
 
 
+<script>
 
-  <!-- =======================================================
-       BACK TO TOP
-  ======================================================== -->
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileLinks = document.querySelectorAll(".mobile-menu a");
 
-  <button
-    class="back-top"
-    id="backTop"
-    aria-label="Back to top"
-  >
-    ↑
-  </button>
+menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+});
 
-
-
-  <!-- =======================================================
-       JAVASCRIPT
-  ======================================================== -->
-
-  <script>
-
-    /* =======================================================
-       HEADER SCROLL EFFECT
-    ======================================================== */
-
-    const header =
-      document.getElementById("header");
-
-    const backTop =
-      document.getElementById("backTop");
+mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
+});
 
 
-    function handleScroll() {
+const observer = new IntersectionObserver(
+    entries => {
 
-      if (window.scrollY > 30) {
-
-        header.classList.add("scrolled");
-
-      } else {
-
-        header.classList.remove("scrolled");
-
-      }
-
-
-      if (window.scrollY > 600) {
-
-        backTop.classList.add("visible");
-
-      } else {
-
-        backTop.classList.remove("visible");
-
-      }
-
-    }
-
-
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      { passive: true }
-    );
-
-
-    handleScroll();
-
-
-
-    /* =======================================================
-       MOBILE NAVIGATION
-    ======================================================== */
-
-    const menuToggle =
-      document.getElementById("menuToggle");
-
-    const nav =
-      document.getElementById("nav");
-
-
-    menuToggle.addEventListener(
-      "click",
-      () => {
-
-        const open =
-          nav.classList.toggle("open");
-
-        menuToggle.classList.toggle(
-          "active",
-          open
-        );
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          open
-        );
-
-        document.body.classList.toggle(
-          "menu-open",
-          open
-        );
-
-      }
-    );
-
-
-    document
-      .querySelectorAll("#nav a")
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          () => {
-
-            nav.classList.remove("open");
-
-            menuToggle.classList.remove(
-              "active"
-            );
-
-            menuToggle.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-            document.body.classList.remove(
-              "menu-open"
-            );
-
-          }
-        );
-
-      });
-
-
-
-    /* =======================================================
-       REVEAL ON SCROLL
-    ======================================================== */
-
-    const revealElements =
-      document.querySelectorAll(".reveal");
-
-
-    const revealObserver =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
+        entries.forEach(entry => {
 
             if (entry.isIntersecting) {
-
-              entry.target.classList.add(
-                "visible"
-              );
-
-              revealObserver.unobserve(
-                entry.target
-              );
-
+                entry.target.classList.add("visible");
             }
 
-          });
-
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-
-    revealElements.forEach(
-      element => {
-
-        revealObserver.observe(element);
-
-      }
-    );
-
-
-
-    /* =======================================================
-       BACK TO TOP
-    ======================================================== */
-
-    backTop.addEventListener(
-      "click",
-      () => {
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
         });
 
-      }
-    );
-
-
-
-    /* =======================================================
-       CURSOR GLOW
-    ======================================================== */
-
-    const cursorGlow =
-      document.getElementById("cursorGlow");
-
-
-    if (
-      window.matchMedia(
-        "(pointer: fine)"
-      ).matches
-    ) {
-
-      window.addEventListener(
-        "mousemove",
-        event => {
-
-          cursorGlow.style.left =
-            event.clientX + "px";
-
-          cursorGlow.style.top =
-            event.clientY + "px";
-
-        },
-        { passive: true }
-      );
-
+    },
+    {
+        threshold: 0.12
     }
+);
+
+document.querySelectorAll(
+    ".service-card, .portfolio-card, .process-item, .price-card, .about-content, .about-visual"
+).forEach(element => {
+    observer.observe(element);
+});
 
 
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
 
-    /* =======================================================
-       CONTACT FORM
-    ======================================================== */
+    anchor.addEventListener("click", function(e) {
 
-    const contactForm =
-      document.getElementById(
-        "contactForm"
-      );
+        const target = document.querySelector(this.getAttribute("href"));
 
+        if (target) {
 
-    contactForm.addEventListener(
-      "submit",
-      event => {
+            e.preventDefault();
 
-        event.preventDefault();
-
-
-        const name =
-          document.getElementById(
-            "name"
-          ).value.trim();
-
-        const email =
-          document.getElementById(
-            "email"
-          ).value.trim();
-
-        const company =
-          document.getElementById(
-            "company"
-          ).value.trim();
-
-        const budget =
-          document.getElementById(
-            "budget"
-          ).value;
-
-        const project =
-          document.getElementById(
-            "project"
-          ).value.trim();
-
-
-        if (!name || !email || !project) {
-
-          alert(
-            "Please complete your name, email, and project details."
-          );
-
-          return;
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
         }
 
+    });
 
-        /*
-          This opens the visitor's email client
-          with the project inquiry prepared.
+});
 
-          The SCHEMATIX contact address is intentionally
-          NOT displayed anywhere on the website.
-        */
-
-        const subject =
-          encodeURIComponent(
-            "New SCHEMATIX CREATIV Project Inquiry"
-          );
-
-
-        const body =
-          encodeURIComponent(
-
-            "NEW PROJECT INQUIRY\n\n" +
-
-            "Name: " +
-            name +
-            "\n" +
-
-            "Email: " +
-            email +
-            "\n" +
-
-            "Business: " +
-            (
-              company ||
-              "Not provided"
-            ) +
-            "\n" +
-
-            "Budget: " +
-            (
-              budget ||
-              "Not provided"
-            ) +
-            "\n\n" +
-
-            "Project Details:\n" +
-            project
-
-          );
-
-
-        /*
-          Replace the recipient below with your
-          preferred business email if you change it.
-          It remains hidden from the visible page.
-        */
-
-        window.location.href =
-          "mailto:onlyadmin@schematixcreativ.co.site" +
-          "?subject=" +
-          subject +
-          "&body=" +
-          body;
-
-      }
-    );
-
-
-
-    /* =======================================================
-       SMOOTH INTERNAL LINKS
-    ======================================================== */
-
-    document
-      .querySelectorAll(
-        'a[href^="#"]'
-      )
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          event => {
-
-            const targetId =
-              link.getAttribute("href");
-
-            if (
-              targetId === "#" ||
-              !targetId
-            ) {
-              return;
-            }
-
-
-            const target =
-              document.querySelector(
-                targetId
-              );
-
-
-            if (target) {
-
-              event.preventDefault();
-
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-              });
-
-            }
-
-          }
-        );
-
-      });
-
-  </script>
+</script>
 
 </body>
 </html>
+```
