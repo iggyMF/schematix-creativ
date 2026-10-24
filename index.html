@@ -1,919 +1,216 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SCHEMATIX CREATIV | Branding & Creative Design</title>
-
-    <meta
-        name="description"
-        content="SCHEMATIX CREATIV builds memorable brands through identity design, graphic design, and creative direction."
-    >
-
-    <meta name="theme-color" content="#07070c">
-
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCHEMATIX CREATIV | Creative Laboratory for Brands</title>
+  <meta name="description" content="SCHEMATIX CREATIV builds memorable brands through identity design, graphic design, and creative direction. We don’t follow the blueprint. We create it.">
+  <meta name="theme-color" content="#050508">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+<div class="glow" id="glow"></div>
 
-<!-- =========================
-     BACKGROUND
-========================= -->
-<div class="noise"></div>
-<div class="ambient ambient-one"></div>
-<div class="ambient ambient-two"></div>
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-<header class="site-header">
-
-    <a href="#" class="brand">
-        <img src="logo.png" alt="SCHEMATIX CREATIV">
-    </a>
-
-    <nav class="desktop-nav">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <a href="#contact" class="nav-cta">
-        Start a Project
-        <span>↗</span>
-    </a>
-
-    <button class="menu-toggle" aria-label="Open menu">
-        <span></span>
-        <span></span>
-    </button>
-
+<!-- ========== NAV ========== -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand"><img src="logo.png" alt="SCHEMATIX CREATIV" height="34"></a>
+  <nav class="links" id="links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="btn btn-sm">Start a Project ↗</a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
 </header>
 
-<!-- =========================
-     MOBILE MENU
-========================= -->
-<div class="mobile-menu">
-
-    <div class="mobile-menu-inner">
-
-        <div class="mobile-label">NAVIGATION</div>
-
-        <a href="#services">Services <span>01</span></a>
-        <a href="#about">About <span>02</span></a>
-        <a href="#work">Work <span>03</span></a>
-        <a href="#pricing">Pricing <span>04</span></a>
-        <a href="#contact">Contact <span>05</span></a>
-
-        <div class="mobile-footer">
-            SCHEMATIX CREATIV
-        </div>
-
-    </div>
-
-</div>
-
-<!-- =========================
-     HERO
-========================= -->
-<main>
-
+<main id="top">
+<!-- ========== HERO ========== -->
 <section class="hero">
-
-    <div class="hero-grid"></div>
-
-    <div class="hero-content">
-
-        <div class="eyebrow reveal">
-            <span class="status-dot"></span>
-            CREATIVE BRANDING STUDIO
-        </div>
-
-        <h1 class="reveal delay-1">
-            WE BUILD
-            <span>BRANDS</span>
-            PEOPLE
-            <em>REMEMBER.</em>
-        </h1>
-
-        <p class="hero-description reveal delay-2">
-            Strategic branding, graphic design, and visual identity
-            for businesses ready to look as serious as their vision.
-        </p>
-
-        <div class="hero-actions reveal delay-3">
-
-            <a href="#work" class="button button-primary">
-                Explore Our Work
-                <span>↗</span>
-            </a>
-
-            <a href="#contact" class="button button-outline">
-                Start Your Project
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="hero-side-text">
-        <span>EST. 2026</span>
-        <span>BRAND / DESIGN / DIRECTION</span>
-    </div>
-
-    <div class="hero-scroll">
-        <span>SCROLL TO EXPLORE</span>
-        <div class="scroll-line"></div>
-    </div>
-
+  <div class="grid-bg"></div>
+  <p class="mono tag reveal">● CREATIVE LABORATORY / EST. 2026</p>
+  <h1 class="reveal">WE DON’T FOLLOW THE BLUEPRINT.<br><em>WE CREATE IT.</em></h1>
+  <p class="lead reveal">Strategic branding, graphic design, and visual identity for businesses ready to look as serious as their vision.</p>
+  <div class="cta-row reveal">
+    <a href="#work" class="btn">Explore Our Work ↗</a>
+    <a href="#contact" class="btn btn-ghost">Start Your Project</a>
+  </div>
+  <div class="stats reveal">
+    <div><b data-count="3">0</b><span class="mono">CORE SERVICES</span></div>
+    <div><b data-count="100" data-suffix="%">0</b><span class="mono">CUSTOM WORK</span></div>
+    <div><b data-count="2" data-suffix=" RDS">0</b><span class="mono">REVISIONS INCLUDED</span></div>
+  </div>
 </section>
 
-
-<!-- =========================
-     MARQUEE
-========================= -->
-<div class="marquee">
-
-    <div class="marquee-track">
-
-        <span>BRAND IDENTITY</span>
-        <b>✦</b>
-        <span>GRAPHIC DESIGN</span>
-        <b>✦</b>
-        <span>CREATIVE DIRECTION</span>
-        <b>✦</b>
-        <span>VISUAL SYSTEMS</span>
-        <b>✦</b>
-
-        <span>BRAND IDENTITY</span>
-        <b>✦</b>
-        <span>GRAPHIC DESIGN</span>
-        <b>✦</b>
-        <span>CREATIVE DIRECTION</span>
-        <b>✦</b>
-        <span>VISUAL SYSTEMS</span>
-        <b>✦</b>
-
-    </div>
-
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>BRAND IDENTITY ✦ GRAPHIC DESIGN ✦ CREATIVE DIRECTION ✦ VISUAL SYSTEMS ✦ </span>
+    <span>BRAND IDENTITY ✦ GRAPHIC DESIGN ✦ CREATIVE DIRECTION ✦ VISUAL SYSTEMS ✦ </span>
+  </div>
 </div>
 
-
-<!-- =========================
-     SERVICES
-========================= -->
-<section id="services" class="section services-section">
-
-    <div class="section-heading">
-
-        <div>
-            <span class="section-number">01 / SERVICES</span>
-
-            <h2>
-                DESIGN WITH
-                <span>INTENTION.</span>
-            </h2>
-        </div>
-
-        <p>
-            We turn ideas into visual systems that make businesses
-            recognizable, credible, and impossible to overlook.
-        </p>
-
-    </div>
-
-
-    <div class="service-grid">
-
-        <article class="service-card">
-
-            <div class="service-top">
-                <span>01</span>
-                <span>IDENTITY</span>
-            </div>
-
-            <div class="service-icon">✦</div>
-
-            <h3>Brand Identity</h3>
-
-            <p>
-                Logos, typography, color systems, visual language,
-                and complete identity systems built around your business.
-            </p>
-
-            <a href="#contact">
-                Explore Service <span>↗</span>
-            </a>
-
-        </article>
-
-
-        <article class="service-card featured-service">
-
-            <div class="service-top">
-                <span>02</span>
-                <span>DESIGN</span>
-            </div>
-
-            <div class="service-icon">◈</div>
-
-            <h3>Graphic Design</h3>
-
-            <p>
-                Marketing graphics, social content, promotional materials,
-                digital assets, and campaign visuals designed to perform.
-            </p>
-
-            <a href="#contact">
-                Explore Service <span>↗</span>
-            </a>
-
-        </article>
-
-
-        <article class="service-card">
-
-            <div class="service-top">
-                <span>03</span>
-                <span>DIRECTION</span>
-            </div>
-
-            <div class="service-icon">⌁</div>
-
-            <h3>Creative Direction</h3>
-
-            <p>
-                A cohesive creative vision that keeps your brand
-                consistent across every touchpoint and platform.
-            </p>
-
-            <a href="#contact">
-                Explore Service <span>↗</span>
-            </a>
-
-        </article>
-
-    </div>
-
+<!-- ========== SERVICES ========== -->
+<section id="services" class="section">
+  <p class="mono tag reveal">01 / SERVICES</p>
+  <h2 class="reveal">DESIGN WITH INTENTION.</h2>
+  <p class="sub reveal">We turn ideas into visual systems that make businesses recognizable, credible, and impossible to overlook.</p>
+  <div class="cards">
+    <article class="card tilt reveal">
+      <span class="mono">01 IDENTITY</span><i>✦</i>
+      <h3>Brand Identity</h3>
+      <p>Logos, typography, color systems, visual language, and complete identity systems built around your business.</p>
+      <a href="#contact">Explore Service ↗</a>
+    </article>
+    <article class="card tilt reveal">
+      <span class="mono">02 DESIGN</span><i>◈</i>
+      <h3>Graphic Design</h3>
+      <p>Marketing graphics, social content, promotional materials, digital assets, and campaign visuals designed to perform.</p>
+      <a href="#contact">Explore Service ↗</a>
+    </article>
+    <article class="card tilt reveal">
+      <span class="mono">03 DIRECTION</span><i>⌁</i>
+      <h3>Creative Direction</h3>
+      <p>A cohesive creative vision that keeps your brand consistent across every touchpoint and platform.</p>
+      <a href="#contact">Explore Service ↗</a>
+    </article>
+  </div>
 </section>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-<section id="about" class="section about-section">
-
-    <div class="about-visual">
-
-        <div class="about-orbit orbit-one"></div>
-        <div class="about-orbit orbit-two"></div>
-        <div class="about-core">S</div>
-
-        <span class="orbit-label label-one">STRATEGY</span>
-        <span class="orbit-label label-two">IDENTITY</span>
-        <span class="orbit-label label-three">DESIGN</span>
-
-    </div>
-
-
-    <div class="about-content">
-
-        <span class="section-number">02 / ABOUT</span>
-
-        <h2>
-            YOUR BRAND
-            <span>DESERVES</span>
-            MORE.
-        </h2>
-
-        <p class="lead">
-            SCHEMATIX CREATIV is a modern creative studio focused on
-            building brands with personality, structure, and purpose.
-        </p>
-
-        <p>
-            We combine strategic thinking with bold visual design to
-            create identities that don't simply look good — they give
-            businesses a recognizable presence.
-        </p>
-
-        <div class="about-stats">
-
-            <div>
-                <strong>01</strong>
-                <span>Strategic Approach</span>
-            </div>
-
-            <div>
-                <strong>02</strong>
-                <span>Custom Design</span>
-            </div>
-
-            <div>
-                <strong>03</strong>
-                <span>Built to Scale</span>
-            </div>
-
-        </div>
-
-    </div>
-
+<!-- ========== ABOUT ========== -->
+<section id="about" class="section split">
+  <div>
+    <p class="mono tag reveal">02 / ABOUT</p>
+    <h2 class="reveal">YOUR BRAND DESERVES MORE.</h2>
+    <p class="sub reveal">SCHEMATIX CREATIV is a modern creative studio focused on building brands with personality, structure, and purpose.</p>
+    <p class="sub reveal">We combine strategic thinking with bold visual design to create identities that don’t simply look good — they give businesses a recognizable presence.</p>
+    <ul class="pillars reveal">
+      <li><b>01</b> Strategic Approach</li>
+      <li><b>02</b> Custom Design</li>
+      <li><b>03</b> Built to Scale</li>
+    </ul>
+  </div>
+  <div class="orb reveal"><div class="ring"></div><div class="ring r2"></div><img src="logo.png" alt=""><span class="mono">STRATEGY · IDENTITY · DESIGN</span></div>
 </section>
 
-
-<!-- =========================
-     WORK
-========================= -->
-<section id="work" class="section work-section">
-
-    <div class="section-heading">
-
-        <div>
-            <span class="section-number">03 / SELECTED WORK</span>
-
-            <h2>
-                CONCEPTS
-                <span>WITH CHARACTER.</span>
-            </h2>
-        </div>
-
-        <p>
-            A glimpse at the visual direction, identity systems,
-            and creative concepts SCHEMATIX CREATIV can bring to life.
-        </p>
-
-    </div>
-
-
-    <div class="portfolio-grid">
-
-        <!-- NOVA -->
-        <article class="portfolio-card portfolio-large">
-
-            <div class="portfolio-art nova-art">
-
-                <div class="art-grid"></div>
-
-                <div class="nova-ring"></div>
-
-                <div class="art-word">
-                    NOVA
-                </div>
-
-                <div class="art-caption">
-                    CREATIVE TECHNOLOGY
-                </div>
-
-            </div>
-
-            <div class="portfolio-info">
-
-                <div>
-                    <span>01 / BRAND IDENTITY</span>
-                    <h3>NOVA Creative</h3>
-                </div>
-
-                <p>
-                    A futuristic identity concept built around
-                    movement, technology, and visual precision.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- VOLT -->
-        <article class="portfolio-card">
-
-            <div class="portfolio-art volt-art">
-
-                <div class="volt-lines"></div>
-
-                <div class="volt-word">
-                    VOLT
-                </div>
-
-                <div class="art-caption">
-                    ENERGY / PERFORMANCE
-                </div>
-
-            </div>
-
-            <div class="portfolio-info">
-
-                <div>
-                    <span>02 / CAMPAIGN</span>
-                    <h3>VOLT Energy</h3>
-                </div>
-
-                <p>
-                    High-energy campaign direction designed for
-                    a bold digital presence.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- LUXE -->
-        <article class="portfolio-card">
-
-            <div class="portfolio-art luxe-art">
-
-                <div class="luxe-circle"></div>
-
-                <div class="luxe-word">
-                    LUXE
-                </div>
-
-                <div class="art-caption">
-                    MODERN LIFESTYLE
-                </div>
-
-            </div>
-
-            <div class="portfolio-info">
-
-                <div>
-                    <span>03 / DIGITAL BRAND</span>
-                    <h3>LUXE Studio</h3>
-                </div>
-
-                <p>
-                    A refined digital identity combining minimalist
-                    structure with premium visual direction.
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
+<!-- ========== WORK ========== -->
+<section id="work" class="section">
+  <p class="mono tag reveal">03 / SELECTED WORK</p>
+  <h2 class="reveal">CONCEPTS WITH CHARACTER.</h2>
+  <p class="sub reveal">A glimpse at the visual direction, identity systems, and creative concepts SCHEMATIX CREATIV can bring to life.</p>
+  <div class="cards work">
+    <article class="card tilt reveal">
+      <div class="thumb t1"><b>NOVA</b><span class="mono">CREATIVE TECHNOLOGY</span></div>
+      <span class="mono">01 / BRAND IDENTITY</span>
+      <h3>NOVA Creative</h3>
+      <p>A futuristic identity concept built around movement, technology, and visual precision.</p>
+    </article>
+    <article class="card tilt reveal">
+      <div class="thumb t2"><b>VOLT</b><span class="mono">ENERGY / PERFORMANCE</span></div>
+      <span class="mono">02 / CAMPAIGN</span>
+      <h3>VOLT Energy</h3>
+      <p>High-energy campaign direction designed for a bold digital presence.</p>
+    </article>
+    <article class="card tilt reveal">
+      <div class="thumb t3"><b>LUXE</b><span class="mono">MODERN LIFESTYLE</span></div>
+      <span class="mono">03 / DIGITAL BRAND</span>
+      <h3>LUXE Studio</h3>
+      <p>A refined digital identity combining minimalist structure with premium visual direction.</p>
+    </article>
+  </div>
 </section>
 
-
-<!-- =========================
-     PROCESS
-========================= -->
-<section class="section process-section">
-
-    <div class="section-heading">
-
-        <div>
-            <span class="section-number">04 / PROCESS</span>
-
-            <h2>
-                FROM IDEA
-                <span>TO IDENTITY.</span>
-            </h2>
-        </div>
-
-        <p>
-            A straightforward creative process designed to keep
-            projects focused, intentional, and moving forward.
-        </p>
-
-    </div>
-
-
-    <div class="process-list">
-
-        <div class="process-item">
-
-            <div class="process-number">01</div>
-
-            <div>
-                <h3>Discover</h3>
-                <p>
-                    We learn about your business, audience, goals,
-                    and the position you want your brand to occupy.
-                </p>
-            </div>
-
-            <span class="process-arrow">↗</span>
-
-        </div>
-
-
-        <div class="process-item">
-
-            <div class="process-number">02</div>
-
-            <div>
-                <h3>Develop</h3>
-                <p>
-                    Concepts become visual systems through strategy,
-                    exploration, typography, color, and design.
-                </p>
-            </div>
-
-            <span class="process-arrow">↗</span>
-
-        </div>
-
-
-        <div class="process-item">
-
-            <div class="process-number">03</div>
-
-            <div>
-                <h3>Deliver</h3>
-                <p>
-                    Your final identity and creative assets are
-                    organized and prepared for real-world use.
-                </p>
-            </div>
-
-            <span class="process-arrow">↗</span>
-
-        </div>
-
-    </div>
-
+<!-- ========== PROCESS ========== -->
+<section id="process" class="section">
+  <p class="mono tag reveal">04 / PROCESS</p>
+  <h2 class="reveal">FROM IDEA TO IDENTITY.</h2>
+  <p class="sub reveal">A straightforward creative process designed to keep projects focused, intentional, and moving forward.</p>
+  <div class="steps">
+    <div class="step reveal"><b>01</b><h3>Discover</h3><p>We learn about your business, audience, goals, and the position you want your brand to occupy.</p></div>
+    <div class="step reveal"><b>02</b><h3>Develop</h3><p>Concepts become visual systems through strategy, exploration, typography, color, and design.</p></div>
+    <div class="step reveal"><b>03</b><h3>Deliver</h3><p>Your final identity and creative assets are organized and prepared for real-world use.</p></div>
+  </div>
 </section>
 
-
-<!-- =========================
-     PRICING
-========================= -->
-<section id="pricing" class="section pricing-section">
-
-    <div class="section-heading">
-
-        <div>
-            <span class="section-number">05 / PACKAGES</span>
-
-            <h2>
-                START
-                <span>BUILDING.</span>
-            </h2>
-        </div>
-
-        <p>
-            Flexible starting points for businesses at different
-            stages of their visual journey.
-        </p>
-
-    </div>
-
-
-    <div class="pricing-grid">
-
-        <article class="price-card">
-
-            <span class="price-label">01 / STARTER</span>
-
-            <h3>Starter Brand</h3>
-
-            <div class="price">
-                <small>FROM</small>
-                $299
-            </div>
-
-            <p>
-                A focused foundation for businesses that need
-                a professional visual starting point.
-            </p>
-
-            <ul>
-                <li>Custom Logo</li>
-                <li>Color Palette</li>
-                <li>Typography Guide</li>
-                <li>2 Revision Rounds</li>
-            </ul>
-
-            <a href="#contact" class="price-button">
-                Get Started <span>↗</span>
-            </a>
-
-        </article>
-
-
-        <article class="price-card price-featured">
-
-            <div class="popular">MOST REQUESTED</div>
-
-            <span class="price-label">02 / PROFESSIONAL</span>
-
-            <h3>Professional Brand</h3>
-
-            <div class="price">
-                <small>FROM</small>
-                $699
-            </div>
-
-            <p>
-                A complete identity system designed for businesses
-                ready for a stronger and more consistent presence.
-            </p>
-
-            <ul>
-                <li>Complete Brand Identity</li>
-                <li>Logo Suite</li>
-                <li>Brand Guidelines</li>
-                <li>Social Media Kit</li>
-            </ul>
-
-            <a href="#contact" class="price-button">
-                Get Started <span>↗</span>
-            </a>
-
-        </article>
-
-
-        <article class="price-card">
-
-            <span class="price-label">03 / CUSTOM</span>
-
-            <h3>Custom Project</h3>
-
-            <div class="price talk-price">
-                LET'S TALK
-            </div>
-
-            <p>
-                Custom creative solutions built around your
-                business, scope, timeline, and goals.
-            </p>
-
-            <ul>
-                <li>Custom Scope</li>
-                <li>Creative Direction</li>
-                <li>Flexible Deliverables</li>
-                <li>Project-Based Pricing</li>
-            </ul>
-
-            <a href="#contact" class="price-button">
-                Request Quote <span>↗</span>
-            </a>
-
-        </article>
-
-    </div>
-
+<!-- ========== PRICING ========== -->
+<section id="pricing" class="section">
+  <p class="mono tag reveal">05 / PACKAGES</p>
+  <h2 class="reveal">START BUILDING.</h2>
+  <p class="sub reveal">Flexible starting points for businesses at different stages of their visual journey.</p>
+  <div class="cards">
+    <article class="card price reveal">
+      <span class="mono">01 / STARTER</span>
+      <h3>Starter Brand</h3>
+      <div class="amt">FROM $299</div>
+      <p>A focused foundation for businesses that need a professional visual starting point.</p>
+      <ul><li>Custom Logo</li><li>Color Palette</li><li>Typography Guide</li><li>2 Revision Rounds</li></ul>
+      <a href="#contact" class="btn btn-ghost">Get Started ↗</a>
+    </article>
+    <article class="card price hot reveal">
+      <em class="badge mono">MOST REQUESTED</em>
+      <span class="mono">02 / PROFESSIONAL</span>
+      <h3>Professional Brand</h3>
+      <div class="amt">FROM $699</div>
+      <p>A complete identity system designed for businesses ready for a stronger and more consistent presence.</p>
+      <ul><li>Complete Brand Identity</li><li>Logo Suite</li><li>Brand Guidelines</li><li>Social Media Kit</li></ul>
+      <a href="#contact" class="btn">Get Started ↗</a>
+    </article>
+    <article class="card price reveal">
+      <span class="mono">03 / CUSTOM</span>
+      <h3>Custom Project</h3>
+      <div class="amt">LET’S TALK</div>
+      <p>Custom creative solutions built around your business, scope, timeline, and goals.</p>
+      <ul><li>Custom Scope</li><li>Creative Direction</li><li>Flexible Deliverables</li><li>Project-Based Pricing</li></ul>
+      <a href="#contact" class="btn btn-ghost">Request Quote ↗</a>
+    </article>
+  </div>
 </section>
 
-
-<!-- =========================
-     CTA
-========================= -->
-<section class="cta-section">
-
-    <div class="cta-glow"></div>
-
-    <span class="section-number">LET'S BUILD</span>
-
-    <h2>
-        READY TO MAKE
-        <span>AN IMPRESSION?</span>
-    </h2>
-
-    <p>
-        Bring us the idea. We'll help turn it into something
-        people remember.
-    </p>
-
-    <a href="#contact" class="button button-primary">
-        Start Your Project
-        <span>↗</span>
-    </a>
-
+<!-- ========== CTA BAND ========== -->
+<section class="band reveal">
+  <p class="mono tag">LET’S BUILD</p>
+  <h2>READY TO MAKE AN IMPRESSION?</h2>
+  <p class="sub">Bring us the idea. We’ll help turn it into something people remember.</p>
+  <a href="#contact" class="btn">Start Your Project ↗</a>
 </section>
 
-
-<!-- =========================
-     CONTACT
-========================= -->
-<section id="contact" class="section contact-section">
-
-    <div class="contact-heading">
-
-        <span class="section-number">06 / CONTACT</span>
-
-        <h2>
-            LET'S CREATE
-            <span>SOMETHING.</span>
-        </h2>
-
-        <p>
-            Tell us what you're building, what you need,
-            and where you want to take it.
-        </p>
-
-    </div>
-
-
-    <form
-        class="contact-form"
-        action="https://formsubmit.co/onlyadmin@schematixcreativ.co.site"
-        method="POST"
-    >
-
-        <input type="hidden" name="_subject" value="New SCHEMATIX CREATIV Project Inquiry">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-
-        <div class="form-row">
-
-            <div class="field">
-                <label for="name">NAME</label>
-                <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    placeholder="Your name"
-                    required
-                >
-            </div>
-
-            <div class="field">
-                <label for="email">EMAIL</label>
-                <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="you@company.com"
-                    required
-                >
-            </div>
-
-        </div>
-
-
-        <div class="field">
-
-            <label for="company">BUSINESS / BRAND</label>
-
-            <input
-                id="company"
-                type="text"
-                name="company"
-                placeholder="Your business or brand"
-            >
-
-        </div>
-
-
-        <div class="field">
-
-            <label for="service">WHAT DO YOU NEED?</label>
-
-            <select id="service" name="service">
-
-                <option value="">Select a service</option>
-                <option value="Brand Identity">Brand Identity</option>
-                <option value="Graphic Design">Graphic Design</option>
-                <option value="Creative Direction">Creative Direction</option>
-                <option value="Custom Project">Custom Project</option>
-
-            </select>
-
-        </div>
-
-
-        <div class="field">
-
-            <label for="message">PROJECT DETAILS</label>
-
-            <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us about your project..."
-                required
-            ></textarea>
-
-        </div>
-
-
-        <button type="submit" class="form-submit">
-            Send Project Inquiry
-            <span>↗</span>
-        </button>
-
-    </form>
-
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="section split">
+  <div>
+    <p class="mono tag reveal">06 / CONTACT</p>
+    <h2 class="reveal">LET’S CREATE SOMETHING.</h2>
+    <p class="sub reveal">Tell us what you’re building, what you need, and where you want to take it.</p>
+  </div>
+  <!-- Replace YOUR_FORM_ID with your free Formspree form ID (formspree.io) -->
+  <form id="form" class="form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <label>NAME<input name="name" required></label>
+    <label>EMAIL<input type="email" name="email" required></label>
+    <label>BUSINESS / BRAND<input name="brand"></label>
+    <label>WHAT DO YOU NEED?
+      <select name="service" required>
+        <option value="">Select a service</option>
+        <option>Brand Identity</option><option>Graphic Design</option>
+        <option>Creative Direction</option><option>Custom Project</option>
+      </select>
+    </label>
+    <label>PROJECT DETAILS<textarea name="details" rows="4" required></textarea></label>
+    <button class="btn" type="submit">Send Project Inquiry ↗</button>
+    <p class="mono status" id="status" role="status"></p>
+  </form>
 </section>
-
 </main>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-<footer>
-
-    <div class="footer-top">
-
-        <img
-            src="logo.png"
-            alt="SCHEMATIX CREATIV"
-            class="footer-logo"
-        >
-
-        <p>
-            Brands with structure.<br>
-            Design with intention.
-        </p>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <span>
-            © 2026 SCHEMATIX CREATIV
-        </span>
-
-        <span>
-            BRAND / DESIGN / DIRECTION
-        </span>
-
-        <a href="#">
-            BACK TO TOP ↑
-        </a>
-
-    </div>
-
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <img src="logo.png" alt="SCHEMATIX CREATIV" height="40">
+  <p>Brands with structure.<br>Design with intention.</p>
+  <p class="mono">© <span id="year">2026</span> SCHEMATIX CREATIV · BRAND / DESIGN / DIRECTION · <a href="#top">BACK TO TOP ↑</a></p>
 </footer>
-
-
-<script>
-
-const menuToggle = document.querySelector(".menu-toggle");
-const mobileMenu = document.querySelector(".mobile-menu");
-const mobileLinks = document.querySelectorAll(".mobile-menu a");
-
-menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-    document.body.classList.toggle("menu-open");
-});
-
-mobileLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        menuToggle.classList.remove("active");
-        mobileMenu.classList.remove("active");
-        document.body.classList.remove("menu-open");
-    });
-});
-
-
-const observer = new IntersectionObserver(
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-document.querySelectorAll(
-    ".service-card, .portfolio-card, .process-item, .price-card, .about-content, .about-visual"
-).forEach(element => {
-    observer.observe(element);
-});
-
-
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-
-    anchor.addEventListener("click", function(e) {
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (target) {
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-
-</script>
-
 </body>
 </html>
-```
